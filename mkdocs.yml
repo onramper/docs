@@ -1,0 +1,16 @@
+# See https://squidfunk.github.io/mkdocs-material/getting-started/#configuration
+site_name: Onramper Docs
+site_description: Documentation for onramper widget & API
+
+theme:
+  name: material
+  language: en
+  logo: images/logo2.png
+  favicon: images/favicon.ico
+
+google_analytics:
+  - UA-172357450-1
+  - auto
+
+extra_css:
+  - stylesheets/colors.css
