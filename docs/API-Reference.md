@@ -4,8 +4,8 @@ Endpoint: `https://api.onramper.dev/gateways`
 ##### Options
 - **country**: `https://api.onramper.dev/gateways?country=es`
 - **icons**: `https://api.onramper.dev/gateways?includeIcons=true`
-- **cryptocurrencies**: `https://api.onramper.dev/gateways?cryptocurrencies=btc,neo`
-- **currencies**: `https://api.onramper.dev/gateways?currencies=eu,usd`
+- **cryptoCurrencies**: `https://api.onramper.dev/gateways?cryptoCurrencies=btc,neo`
+- **fiatCurrencies**: `https://api.onramper.dev/gateways?fiatCurrencies=eu,usd`
 
 Also provides localization data on the user, which can be used to customize the widget.
 
