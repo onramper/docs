@@ -1,3 +1,6 @@
+## Countries
+Country can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get the a union of the available options for all countries just set the country to 'all'.
+
 ## gateways
 Endpoint: `https://api.onramper.dev/gateways`  
 
