@@ -16,3 +16,4 @@ Example: `https://api.onramper.dev/rate/EUR/BTC/creditCard/100`
 ##### Options
   - **country**: `?country=es`
   - **icons**: `?includeIcons=true`
+  - **amountInCrypto**: `?amountInCrypto=true`
