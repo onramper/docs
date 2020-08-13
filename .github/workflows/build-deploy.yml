@@ -20,8 +20,8 @@ jobs:
     - name: Upload generated files
       uses: actions/upload-artifact@v2
       with:
-        name: docs
-        path: docs/site
+        name: generated-docs
+        path: site
 
   deploy:
     needs: build
@@ -46,12 +46,12 @@ jobs:
     - name: Download artifacts from build job
       uses: actions/download-artifact@v2
       with:
-        name: docs
-        path: docs/site
+        name: generated-docs
+        path: site
     - name: Deploy to static site
       uses: onramper/action-deploy-aws-static-site@v1
       with:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         domain: ${{ steps.git-branch.outputs.domain }}
-        publish_dir: './docs/site'
+        publish_dir: './site'
