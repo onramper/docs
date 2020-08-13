@@ -1,0 +1,57 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [ master, dev ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - uses: dschep/install-poetry-action@v1.3
+    - run: poetry install
+    - run: poetry run mkdocs build
+    - name: Upload generated files
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs
+        path: docs/site
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Get git branch
+      id: git-branch
+      run: |
+        if [ $REF == 'refs/heads/master' ]
+        then
+          echo "::set-output name=domain::docs.onramper.com"
+        elif [ $REF == 'refs/heads/dev' ]
+        then
+          echo "::set-output name=domain::docs.onramper.dev"
+        else
+          exit 1
+        fi
+      env:
+        REF: ${{ github.ref }}
+    - name: Download artifacts from build job
+      uses: actions/download-artifact@v2
+      with:
+        name: docs
+        path: docs/site
+    - name: Deploy to static site
+      uses: onramper/action-deploy-aws-static-site@v1
+      with:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        domain: ${{ steps.git-branch.outputs.domain }}
+        publish_dir: './docs/site'
