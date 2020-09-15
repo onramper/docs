@@ -126,7 +126,7 @@ Object that stores all input variables. New variables can be added and/or update
 
 `error object`
 
-```json
+```javascript
 {
     [name]: {
         type: string,
