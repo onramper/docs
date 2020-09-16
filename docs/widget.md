@@ -1,11 +1,11 @@
 # Widget
 
-Here you will find instructions that will help you to add the widget in your website or aplication, with just a few lines of code, you will allow your users to purchase cryptocurrencies from your web or app.
+Here you will find instructions to add the Onramper widget in your website or aplication. With just a few lines of code, you can allow your users to purchase cryptocurrencies from your web or app.
 
-You can integrate our widget using different ways:  
+You can integrate the widget in four different ways:  
 · Redirect your users to the widget URL. [See more.](#url-redirect)  
 · Use an iframe or a webview to embed the widget in your application. [See more.](#iframe)  
-· Import a component in your react application. [See more.](#react-component)   
+· Import a component in your React application. [See more.](#react-component)   
 · Add it to your static webpage using a CDN import. [See more.](#javascript)   
 
 ## Redirect / Iframe
@@ -13,7 +13,7 @@ You can integrate our widget using different ways:
 The widget url is `https://widget.onramper.com`
 
 #### URL Redirect
-Redirect the user to a buy page.
+Using a URL redirect, you can simply redirect your users to a buy page. 
 
 ###### HTML code snippet
 ```html
@@ -22,11 +22,13 @@ Redirect the user to a buy page.
 </a>
 ```
 
-###### Live example
+###### Live example & customization
+Easily customize the buy-page by changing the URL with the [available URL parameters.](#url-parameters)
+
 Redirect customization examples: <a href="https://codesandbox.io/s/onramper-widget-url-redirect-m8tdo" target='_blank' >CodeSandbox</a>
 
 #### Iframe
-Embed an iframe in your website.
+Embed an iframe in your website. This is the easiest way to add the widget on your own page.
 
 ###### HTML code snippet
 ```html
@@ -40,11 +42,11 @@ Embed an iframe in your website.
     style="box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);">
 </iframe>
 ```
-###### Live example
+###### Live example & customization
 Iframe customization example: <a href="https://codesandbox.io/s/onramper-widget-iframe-b038x?file=/index.html" target='_blank' >CodeSandbox</a>
 
 #### URL parameters
-You can pass some arguments as query parameters to the url to customize the widget
+You can pass some arguments as query parameters to the URL to customize the widget
 
 | Name           | Format                               | Example                                                | Default value |
 | -------------- | ------------------------------------ | ------------------------------------------------------ | ------------- |
@@ -56,6 +58,8 @@ You can pass some arguments as query parameters to the url to customize the widg
 | color          | Hexadecimal color                    | `?color=346eeb`                                        | 31a5ff        |
 
 ## React component
+You can also import the widget as a component in your React application.
+
 ###### Installation
 
 ```shell
@@ -79,7 +83,8 @@ export default function WidgetContainer() {
   return <OnramperWidget defaultAddrs={userAddresses} />;
 }
 ```
-###### Live example
+###### Live example & customization
+While importing the widget as a React component, you can customize it using the component props below. 
 <a href="https://widget.onramper.dev/?apiKey=YOUR_API_KEY&color=000000" target='_blank' >Codepen</a>
 
 #### Component props
@@ -93,9 +98,10 @@ export default function WidgetContainer() {
 | color          | String?   | `"#000000"`                          | "#31a5ff"     |
 
 ## Javascript
+
 ###### Setup
 
-Add an empty `div` tag to mark the spot where you want to display the widget and add it an unique id.
+Add an empty `div` tag to mark the spot where you want to display the widget and add a unique id to it.
 
 ```html
 <div id="onramper-widget"></div>
@@ -112,7 +118,7 @@ Then, add three `script` tags to load the necessary dependencies (React, ReactDO
 <script src="https://unpkg.com/@onramper/widget/index.js" crossorigin></script>
 ```
 
-After the three scripts lods, add the widget to the DOM invoking the `initialize` function
+After the three scripts load, add the widget to the DOM invoking the `initialize` function
 
 ```javascript
 Onramper.initialize("#onramper-widget")
@@ -151,7 +157,7 @@ Onramper.initialize("#onramper-widget")
 </html>
 
 ```
-###### Live example
+###### Live example 
 <a href="https://widget.onramper.dev/?apiKey=YOUR_API_KEY&color=000000" target='_blank' >Codepen</a>
 
 #### Initialize parameters
@@ -167,7 +173,7 @@ Onramper.initialize("#onramper-widget")
 
 
 ## Customize
-You can pass some arguments to customize the widget
+You can pass the following arguments to customize the widget
 
 | Parameter      | Description    |
 | -------------- | -------------- |
