@@ -39,7 +39,7 @@ Get a list of available gateways. The info provided of this gateways is the cryp
   ],
   "localization": {
     "country": "es",
-    "state": string | null,
+    "state": null,
     "currency": "EUR"
   }
 }
