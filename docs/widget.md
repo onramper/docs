@@ -1,22 +1,34 @@
 # Widget
 
+Here you will find instructions to add the Onramper widget in your website or aplication. With just a few lines of code, you can allow your users to purchase cryptocurrencies from your web or app.
+
+You can integrate the widget in four different ways:  
+· Redirect your users to the widget URL. [See more.](#url-redirect)  
+· Use an iframe or a webview to embed the widget in your application. [See more.](#iframe)  
+· Import a component in your React application. [See more.](#react-component)   
+· Add it to your static webpage using a CDN import. [See more.](#javascript)   
+
 ## Redirect / Iframe
 
+The widget url is `https://widget.onramper.com`
+
 #### URL Redirect
-Redirect the user to our buy page.
+Using a URL redirect, you can simply redirect your users to a buy page. 
 
 ###### HTML code snippet
 ```html
-<a href="https://widget.onramper.dev?color=346eeb">
-    Buy Crypto
+<a href="https://widget.onramper.dev?color=1d2d50" target="_blank">
+    Buy cryptocurrencies
 </a>
 ```
 
-###### Live example
-<a href="https://widget.onramper.dev/" target='_blank' >Codepen</a>
+###### Live example & customization
+Easily customize the buy-page by changing the URL with the [available URL parameters.](#url-parameters)
+
+Redirect customization examples: <a href="https://codesandbox.io/s/onramper-widget-url-redirect-m8tdo" target='_blank' >CodeSandbox</a>
 
 #### Iframe
-Embed an iframe in your website.
+Embed an iframe in your website. This is the easiest way to add the widget on your own page.
 
 ###### HTML code snippet
 ```html
@@ -30,19 +42,24 @@ Embed an iframe in your website.
     style="box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);">
 </iframe>
 ```
-###### Live example
-<a href="https://widget.onramper.dev" target='_blank' >Codepen</a>
+###### Live example & customization
+Iframe customization example: <a href="https://codesandbox.io/s/onramper-widget-iframe-b038x?file=/index.html" target='_blank' >CodeSandbox</a>
 
-| Name           | Type         | Format                                    | Default value          |
-|----------------|--------------|-------------------------------------------|------------------------|
-| defaultCrypto  | Query string | `CRYPTO_CODE`                             | First available crypto |
-| defaultAmount  | Query string | `100`                                     | 100                    |
-| defaultAddrs   | Query string | `{"CRYPTO_CODE":["ADDR1", "ADDRN"], ...}` |                        |
-| onlyCryptos    | Query string | `CRYPTO1_CODE,CRYPTO2_CODE2,...`          |                        |
-| excludeCryptos | Query string | `CRYPTO1_CODE,CRYPTO2_CODE2,...`          |                        |
-| color          | Query string | `HEX_COLOR`                               | 31a5ff                 |
+#### URL parameters
+You can pass some arguments as query parameters to the URL to customize the widget
+
+| Name           | Format                               | Example                                                | Default value |
+| -------------- | ------------------------------------ | ------------------------------------------------------ | ------------- |
+| defaultCrypto  | Cryptocurrency code                  | `?defaultCrypto=BTC`                                   | Not set       |
+| defaultAmount  | Positive integer                     | `?defaultAmount=500`                                   | 100           |
+| defaultAddrs   | Stringified JSON                     | `?addresses={"BTC":["addr1"],"ETH":["add1r","addr2"]}` | {}            |
+| onlyCryptos    | Comma-separated list of crypto codes | `?onlyCryptos=BTC,ETH,NEO`                             | Not set       |
+| excludeCryptos | Comma-separated list of crypto codes | `?excludeCryptos=BTC,ETH,NEO`                          | Not set       |
+| color          | Hexadecimal color                    | `?color=346eeb`                                        | 31a5ff        |
 
 ## React component
+You can also import the widget as a component in your React application.
+
 ###### Installation
 
 ```shell
@@ -55,31 +72,114 @@ $ npm install @onramper/widget
 
 ###### Code snippet
 ```javascript
-import OnramperWidget from '@onramper/widget'
+import OnramperWidget from "@onramper/widget";
 
-<div style={{height:'595px', width:'440px'}}>
-    <OnramperWidget color='346eeb' />
-</div>
+const userAddresses = {
+    "BTC": ["addr1"],
+    "ETH": ["add1r","addr2"]
+}
+
+export default function WidgetContainer() {
+  return <OnramperWidget defaultAddrs={userAddresses} />;
+}
 ```
-###### Live example
+###### Live example & customization
+While importing the widget as a React component, you can customize it using the component props below. 
 <a href="https://widget.onramper.dev/?apiKey=YOUR_API_KEY&color=000000" target='_blank' >Codepen</a>
 
-#### Component parameters
-| Name           | Type     | Format                                    | Default value          |
-|----------------|----------|-------------------------------------------|------------------------|
-| defaultCrypto  | String   | `"CRYPTO_CODE"`                           | First available crypto |
-| defaultAmount  | Number   | `100`                                     | 100                    |
-| defaultAddrs   | Object   | `{"CRYPTO_CODE":["ADDR1", "ADDRN"], ...}` |                        |
-| onlyCryptos    | String[] | `["CRYPTO1_CODE","CRYPTO2_CODE2",...]`    |                        |
-| excludeCryptos | String[] | `["CRYPTO1_CODE","CRYPTO2_CODE2",...]`    |                        |
-| color          | String   | `"#HEX_COLOR"`                            | "#31a5ff"              |
+#### Component props
+| Name           | Type      | Example                              | Default value |
+| -------------- | --------- | ------------------------------------ | ------------- |
+| defaultCrypto  | String?   | `"ETH"`                              | undefined     |
+| defaultAmount  | Number?   | `500`                                | 100           |
+| defaultAddrs   | Object?   | `{"BTC":["ADDR1"], "ETH":["ADDR2"]}` | {}            |
+| onlyCryptos    | String[]? | `["BTC", "ETH", "NEO"]`              | undefined     |
+| excludeCryptos | String[]? | `["ETH", "NEO"]`                     | undefined     |
+| color          | String?   | `"#000000"`                          | "#31a5ff"     |
 
-## Parameters description
-- **defaultCrypto:** Select a specific cryptocurrency by default. Should be specified the cryptocurrency code. `?defaultCrypto=ETH`
-- **defaultAmount:** Fill a default amount of fiat. The amount should be in USD, then a conversion will be applied to the other currencies. `?defaultAmount=200`
-- **addresses:** Available addresses that the user will be able to pick once he is asked for a wallet address to receive the funds. `?addresses={"BTC":["btcAddr1","btcAddr2"],"ETH":["ethAddr1"],"NEO":["neoAddr1","neoAddr2","neoAddr3","neoAddr4"]}`
-- **onlyCryptos:** Filter. Specify which cryptos will be shown to the user. Should be specified the cryptocurrencies codes. `?onlyCryptos=ETH,BTC,NEO`
-- **excludeCryptos:** Filter. Specify a list of cryptos that sholdn't be shown to the user. Should be specified the cryptocurrencies codes.. `?excludeCryptos=ETH,BTC,NEO`
-- **color:** Highlight color in HEX `?color=346eeb`
+## Javascript
 
-<!-- If one of the cryptos is not available in the user's region, then the filter for this specific crypto is not applied -->
+###### Setup
+
+Add an empty `div` tag to mark the spot where you want to display the widget and add a unique id to it.
+
+```html
+<div id="onramper-widget"></div>
+```
+
+Then, add three `script` tags to load the necessary dependencies (React, ReactDOM) and the widget:
+```html
+<!-- Load React. -->
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+<!-- Load Onramper's widget. -->
+<script src="https://unpkg.com/@onramper/widget/index.js" crossorigin></script>
+```
+
+After the three scripts load, add the widget to the DOM invoking the `initialize` function
+
+```javascript
+Onramper.initialize("#onramper-widget")
+```
+
+###### Code snippet
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Static website</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@onramper/widget/index.js" crossorigin></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+      }
+      #onramper-widget {
+        width: 440px;
+        height: 595px;
+        box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+        margin: 3rem auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="onramper-widget"></div>
+    <script>
+      Onramper.initialize("#onramper-widget");
+    </script>
+  </body>
+</html>
+
+```
+###### Live example 
+<a href="https://widget.onramper.dev/?apiKey=YOUR_API_KEY&color=000000" target='_blank' >Codepen</a>
+
+#### Initialize parameters
+| Name           | Type      | Example                                                                         | Default value |
+| -------------- | --------- | ------------------------------------------------------------------------------- | ------------- |
+| defaultCrypto  | String?   | `Onramper.initialize("#id", {defaultCrypto:"ETH"})`                             | undefined     |
+| defaultAmount  | Number?   | `Onramper.initialize("#id", {defaultAmount:500"})`                              | 100           |
+| defaultAddrs   | Object?   | `Onramper.initialize("#id", {defaultAddrs:{"BTC":["ADDR1"], "ETH":["ADDR2"]}})` | {}            |
+| onlyCryptos    | String[]? | `Onramper.initialize("#id", {onlyCryptos:["BTC", "ETH", "NEO"]})`               | undefined     |
+| excludeCryptos | String[]? | `Onramper.initialize("#id", {excludeCryptos:["ETH", "NEO"]})`                   | undefined     |
+| color          | String?   | `Onramper.initialize("#id", {color:"#000000"})`                                 | "#31a5ff"     |
+
+
+
+## Customize
+You can pass the following arguments to customize the widget
+
+| Parameter      | Description    |
+| -------------- | -------------- |
+| defaultCrypto  | Select a specific cryptocurrency by default. Should be specified the cryptocurrency code. |
+| defaultAmount  | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied.|
+| addresses      | A stringified JSON with the wallet addresses of the user. The keys should be the cryptocurrency code and the value a list containing the user addresses. Can be more than one address per wallet and more than one cryptocurrency. |
+| onlyCryptos    | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.|
+| excludeCryptos | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos..|
+| color          | Color to change the highlight of the widget. Should be an hex color.|
