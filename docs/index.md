@@ -5,10 +5,10 @@ Onramper consist of a [widget](#the-widget) and an [API](#the-api). The API is, 
 
 ## Integrated fiat gateways
 Currently, the integrated gateways are:  
-· [Moonpay](https://moonpay.io)  
-· [Wyre (soon)](https://sendwyre.com)  
-· [Coinify (soon)](https://www.cryptocoin.pro/)  
-· [Cryptocoin.pro (soon)](https://cryptocoin.pro)
+· <a href="https://moonpay.io" target="_blank">Moonpay</a>  
+· <a href="https://sendwyre.com" target="_blank">Wyre (soon)</a>  
+· <a href="https://www.coinify.com/" target="_blank">Coinify (soon)</a>  
+· <a href="https://cryptocoin.pro" target="_blank">Cryptocoin.pro (soon)</a>  
 
 We'll continue to contract with and integrate additional gateways. We'll also be adding an offramp soon (allowing users to sell crypto for fiat).
 
@@ -16,7 +16,7 @@ We'll continue to contract with and integrate additional gateways. We'll also be
 # The Widget
 The widget can be easily implemented on your app/wallet, so you can focus on getting users, instead of having to integrate multiple fiat gateways yourself. The widget can be integrated in as little as 5 minutes. It is possible to customize the widget to only show certain currencies, payment methods etc. You can also automatically insert the user's public key, and change the widget's colours to match your site/app.
 
-· [Try the widget for yourself.](https://widget.onramper.com)  
+· <a href="https://widget.onramper.com" target="_blank">Try the widget for yourself.</a>
 · [Customize and integrate the widget.](https://docs.onramper.dev/widget/)   
 · [Technical overview of how the widget works](https://docs.onramper.dev/readmewidget/)
 
@@ -30,4 +30,5 @@ Onramper can soon be implemented by connecting to our API. As such, businesses w
 # Fees
 Users pay fees for the conversion to the chosen fiat gateway. Additionally, they'll pay 0.75% of the tx to Onramper. However, Onramper is able to get lower rates from gateways that offset this fee in many cases. 
 
-You can also add your own fees on top of every transaction. For this you'll need a special API key provided by Onramper, which is provided [after completing this form.](https://forms.gle/9SQXhhyxHFZvBJ7J6)  
+You can also add your own fees on top of every transaction. For this you'll need a special API key provided by Onramper, which is provided <a href="https://forms.gle/9SQXhhyxHFZvBJ7J6" target="_blank">after completing this form</a>.
+
