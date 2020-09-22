@@ -1,6 +1,6 @@
 # Onramper
 
-[Instructions of how to integrate the widget in your website here.](docs.onramper.dev)
+[Instructions of how to integrate the widget in your website here.]('https://docs.onramper.dev/widget/')
 
 This project is created using create-react-app with typescript, here you will find some notes about how to customize or build the widget from the source files. In this repo you will find the source files of Onramper's buy page (`https://widget.onramper.com`) and the source files of the widget component (`https://npm.org/package/@onramper/widget`)
 
@@ -89,7 +89,7 @@ The navigation context manages the screens stack and transitions and exposes fun
 Exports `NavContext`, `NavProvider` and `NavContainer`.
 
 `NavProvider`: Navigation provider. Wraps the components that will consume the context.
-`NavContainer`: Container of the screens. The component that will be used as main screen should be passed as prop to this component. [See implementation here](./index.tsx).  
+`NavContainer`: Container of the screens. The component that will be used as main screen should be passed as prop to this component. [See implementation here](https://docs.onramper.dev/widget/#react-component).  
 `NavContext`: Navigation context. Used to consume the context.
 
 Functions availables to consume:  
