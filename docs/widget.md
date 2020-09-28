@@ -1,6 +1,6 @@
 # Widget
 
-Here you will find instructions to add the Onramper widget in your website or aplication. With just a few lines of code, you can allow your users to purchase cryptocurrencies from your web or app.
+Here you will find instructions to add the Onramper widget in your website or application. With just a few lines of code, you can allow your users to purchase cryptocurrencies from your web or app.
 
 You can integrate the widget in four different ways:  
 · Redirect your users to the widget URL. [See more.](#url-redirect)  
