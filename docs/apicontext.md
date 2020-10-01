@@ -4,14 +4,14 @@
 
 ```shell
 # Using yarn
-$ yarn add @onramper/onramper-context
+$ yarn add @onramper/context
 
 # Using npm
-$ npm install @onramper/onramper-context
+$ npm install @onramper/context
 ```
 
 ```javascript
-import { APIProvider } from '@onramper/onramper-context'
+import { APIProvider } from '@onramper/context'
 
 <APIProvider>
     <YourApp />
@@ -20,7 +20,7 @@ import { APIProvider } from '@onramper/onramper-context'
 
 ```javascript
 import React, {useContext} from 'react'
-import { APIContext } from '@onramper/onramper-context'
+import { APIContext } from '@onramper/context'
 
 function YourApp() {
     const { data } = useContext(APIContext);
@@ -65,14 +65,14 @@ function YourApp() {
 
 ```shell
 # Using yarn
-$ yarn add @onramper/onramper-api
+$ yarn add @onramper/api
 
 # Using npm
-$ npm install @onramper/onramper-api
+$ npm install @onramper/api
 ```
 
 ```javascript
-import OnramperAPI from '@onramper/onramper-api'
+import OnramperAPI from '@onramper/api'
 
 async function getGateways() {
     let response

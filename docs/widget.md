@@ -85,7 +85,7 @@ export default function WidgetContainer() {
 ```
 ###### Live example & customization
 While importing the widget as a React component, you can customize it using the component props below. 
-<a href="https://widget.onramper.dev/?apiKey=YOUR_API_KEY&color=000000" target='_blank' >Codepen</a>
+<a href="https://widget.onramper.dev" target='_blank' >CodeSandbox (soon)</a>
 
 #### Component props
 | Name           | Type      | Example                              | Default value |
@@ -158,7 +158,7 @@ Onramper.initialize("#onramper-widget")
 
 ```
 ###### Live example 
-<a href="https://widget.onramper.dev/?apiKey=YOUR_API_KEY&color=000000" target='_blank' >Codepen</a>
+<a href="https://widget.onramper.dev" target='_blank' >CodeSandbox (soon)</a>
 
 #### Initialize parameters
 | Name           | Type      | Example                                                                         | Default value |
