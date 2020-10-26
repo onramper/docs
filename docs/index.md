@@ -18,19 +18,19 @@ We'll continue to contract with and integrate additional gateways. We'll also be
 # The Widget
 The widget can be easily implemented on your app/wallet, so you can focus on getting users, instead of having to integrate multiple fiat gateways yourself. The widget can be integrated in as little as 5 minutes. It is possible to customize the widget to only show certain currencies, payment methods, etc. You can also automatically insert the user's public key, and change the widget's colours to match your site/app.
 
-· <a href="https://widget.onramper.dev" target="_blank">Try the widget for yourself.</a>
-· [Customize and integrate the widget.](./widget.md)
+· <a href="https://widget.onramper.dev" target="_blank">Try the widget for yourself.</a>  
+· [Customize and integrate the widget.](./widget.md)  
 · [Technical overview of how the widget works](https://github.com/onramper/widget/blob/dev/README.md)
 
 # The API
 **The API is currently unavailable.**
 Onramper can soon be implemented by connecting to our API. As such, businesses will be able to integrate Onramper however they want. Connecting by API is more work, but allows you to build your own UX/UI.
 
-· [See the reference list of API endpoints](./API-Reference.md)
+· [See the reference list of API endpoints](./API-Reference.md)  
 · [API wrappers (under development)](./apicontext.md)
 
 # Fees
 Users pay fees for the conversion to the chosen fiat gateway. Additionally, they'll pay 0.75% of the tx to Onramper. However, Onramper is able to get lower rates from gateways that offset this fee in many cases. 
 
-You can also add your own fees on top of every transaction. For this you'll need a special API key provided by Onramper, which is provided <a href="https://forms.gle/9SQXhhyxHFZvBJ7J6" target="_blank">after completing this form</a>.
+You can also add your own fees on top of every transaction. For this you'll need to use a special API key provided by us, which you can get by contacting us at thijs@onramper.com or via telegram at 'tmmmaas'.
 
