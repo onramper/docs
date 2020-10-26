@@ -1,6 +1,9 @@
 :root {
   --md-primary-fg-color:               #266678;
 }
+a {
+  color: #223dd7;
+}
 
 footer {
   display:none
