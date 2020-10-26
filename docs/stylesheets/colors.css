@@ -1,8 +1,6 @@
 :root {
   --md-primary-fg-color:               #266678;
-}
-.md-typeset a {
-  color: #223dd7;
+  --md-text-link-color: #223dd7;
 }
 
 footer {
