@@ -8,6 +8,10 @@ theme:
   logo: images/logo2.png
   favicon: images/favicon.ico
 
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
 google_analytics:
   - UA-172357450-1
   - auto
