@@ -43,7 +43,7 @@ Embed an iframe in your website. This is the easiest way to add the widget on yo
 </iframe>
 ```
 ###### Live example & customization
-Iframe customization example: <a href="https://codesandbox.io/s/onramper-widget-iframe-b038x?file=/index.html" target='_blank' >CodeSandbox</a>
+Iframe customization example: <a href="https://codesandbox.io/s/onramper-widget-iframe-b038x" target='_blank' >CodeSandbox</a>
 
 #### URL parameters
 You can pass some arguments as query parameters to the URL to customize the widget
@@ -85,7 +85,7 @@ export default function WidgetContainer() {
 ```
 ###### Live example & customization
 While importing the widget as a React component, you can customize it using the component props below. 
-<a href="https://widget.onramper.dev" target='_blank' >CodeSandbox (soon)</a>
+<a href="https://codesandbox.io/s/onramper-widget-react-component-y3nd1" target='_blank' >CodeSandbox</a>
 
 #### Component props
 | Name           | Type      | Example                              | Default value |
@@ -158,7 +158,7 @@ Onramper.initialize("#onramper-widget")
 
 ```
 ###### Live example 
-<a href="https://widget.onramper.dev" target='_blank' >CodeSandbox (soon)</a>
+<a href="https://codesandbox.io/s/onramper-widget-cdn-import-4zvfs" target='_blank' >CodeSandbox</a>
 
 #### Initialize parameters
 | Name           | Type      | Example                                                                         | Default value |
