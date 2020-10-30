@@ -80,7 +80,19 @@ const userAddresses = {
 }
 
 export default function WidgetContainer() {
-  return <OnramperWidget defaultAddrs={userAddresses} />;
+  return (
+    <div
+      style={{
+        width: "440px",
+        height: "595px"
+      }}
+    >
+      <OnramperWidget defaultCrypto="BTC" />
+    </div>
+  )
+  
+  
+  <OnramperWidget defaultAddrs={userAddresses} />;
 }
 ```
 ###### Live example & customization
@@ -175,11 +187,11 @@ Onramper.initialize("#onramper-widget")
 ## Customize
 You can pass the following arguments to customize the widget
 
-| Parameter      | Description    |
-| -------------- | -------------- |
-| defaultCrypto  | Select a specific cryptocurrency by default. Should be specified the cryptocurrency code. |
-| defaultAmount  | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied.|
+| Parameter      | Description                                                                                                                                                                                                                        |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| defaultCrypto  | Select a specific cryptocurrency by default. Should be specified the cryptocurrency code.                                                                                                                                          |
+| defaultAmount  | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied.                                |
 | addresses      | A stringified JSON with the wallet addresses of the user. The keys should be the cryptocurrency code and the value a list containing the user addresses. Can be more than one address per wallet and more than one cryptocurrency. |
-| onlyCryptos    | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.|
-| excludeCryptos | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos..|
-| color          | Color to change the highlight of the widget. Should be an hex color.|
+| onlyCryptos    | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.                                                                                                                                    |
+| excludeCryptos | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos..                                                                                                              |
+| color          | Color to change the highlight of the widget. Should be an hex color.                                                                                                                                                               |
