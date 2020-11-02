@@ -12,7 +12,7 @@ Currently, the integrated gateways are:
 · <a href="https://www.coinify.com/" target="_blank">Coinify (soon)</a>  
 · <a href="https://cryptocoin.pro" target="_blank">Cryptocoin.pro (soon)</a>  
 
-We'll continue to contract with and integrate additional gateways. We'll also be adding an offramp soon (allowing users to sell crypto for fiat).
+We'll continue to contract with and integrate additional gateways. We'll also be adding an offramp soon (allowing users to sell crypto for fiat).  
 
 
 # The Widget
@@ -20,15 +20,15 @@ The widget can be easily implemented on your app/wallet, so you can focus on get
 
 · <a href="https://widget.onramper.dev" target="_blank">Try the widget for yourself.</a>  
 · [Customize and integrate the widget.](./widget.md)  
-· [Technical overview of how the widget works](https://github.com/onramper/widget/blob/dev/README.md)
-
+· [Technical overview of how the widget works](https://github.com/onramper/widget/blob/dev/README.md)  
+  
 # The API
 **The API is currently unavailable.**
 Onramper can soon be implemented by connecting to our API. As such, businesses will be able to integrate Onramper however they want. Connecting by API is more work, but allows you to build your own UX/UI.
 
 · [See the reference list of API endpoints](./API-Reference.md)  
-· [API wrappers (under development)](./apicontext.md)
-
+· [API wrappers (under development)](./apicontext.md)  
+  
 # Fees
 Users pay fees for the conversion to the chosen fiat gateway. Additionally, they'll pay 0.75% of the tx to Onramper. However, Onramper is able to get lower rates from gateways that offset this fee in many cases. 
 
