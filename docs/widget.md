@@ -10,10 +10,8 @@ You can integrate the widget in four different ways:
 
 ## Redirect / Iframe
 
-The widget url is `https://widget.onramper.com`
 
-#### URL Redirect
-Using a URL redirect, you can simply redirect your users to a buy page. 
+Using a URL redirect, you can simply redirect your users to a buy page. The widget url is `https://widget.onramper.com`
 
 ###### HTML code snippet
 ```html
@@ -27,7 +25,7 @@ Easily customize the buy-page by changing the URL with the [available URL parame
 
 Redirect customization examples: <a href="https://codesandbox.io/s/onramper-widget-url-redirect-m8tdo" target='_blank' >CodeSandbox</a>
 
-#### Iframe
+## Iframe
 Embed an iframe in your website. This is the easiest way to add the widget on your own page.
 
 ###### HTML code snippet
@@ -50,7 +48,7 @@ You can pass some arguments as query parameters to the URL to customize the widg
 
 | Name           | Format                               | Example                                                | Default value |
 | -------------- | ------------------------------------ | ------------------------------------------------------ | ------------- |
-| apiKey         | Alphanumeric string                  | `?apiKey=yourAPIkey`                                   | Not set       |
+| apiKey         | Alphanumeric string                  | `?apiKey=yourAPIkey` <a href="mailto:apikeys@onramper.com" target='_blank' >(contact us for keys)</a>             | Not set       |
 | defaultCrypto  | Cryptocurrency code                  | `?defaultCrypto=BTC`                                   | Not set       |
 | defaultAmount  | Positive integer                     | `?defaultAmount=500`                                   | 100           |
 | defaultAddrs   | Stringified JSON                     | `?addresses={"BTC":["addr1"],"ETH":["add1r","addr2"]}` | {}            |
@@ -103,6 +101,7 @@ While importing the widget as a React component, you can customize it using the 
 #### Component props
 | Name           | Type      | Example                              | Default value |
 | -------------- | --------- | ------------------------------------ | ------------- |
+| apiKey         | String?   | `"yourAPIkey"` <a href="mailto:apikeys@onramper.com" target='_blank' >(contact us for keys)</a>                       | undefined     |
 | defaultCrypto  | String?   | `"ETH"`                              | undefined     |
 | defaultAmount  | Number?   | `500`                                | 100           |
 | defaultAddrs   | Object?   | `{"BTC":["ADDR1"], "ETH":["ADDR2"]}` | {}            |
@@ -176,6 +175,7 @@ Onramper.initialize("#onramper-widget")
 #### Initialize parameters
 | Name           | Type      | Example                                                                         | Default value |
 | -------------- | --------- | ------------------------------------------------------------------------------- | ------------- |
+| apiKey         | String?   | `Onramper.initialize("#id", {apiKey:"YourAPIkey"})` <a href="mailto:apikeys@onramper.com" target='_blank' >(contact us for keys)</a>                             | undefined     |
 | defaultCrypto  | String?   | `Onramper.initialize("#id", {defaultCrypto:"ETH"})`                             | undefined     |
 | defaultAmount  | Number?   | `Onramper.initialize("#id", {defaultAmount:500"})`                              | 100           |
 | defaultAddrs   | Object?   | `Onramper.initialize("#id", {defaultAddrs:{"BTC":["ADDR1"], "ETH":["ADDR2"]}})` | {}            |
