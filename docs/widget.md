@@ -50,6 +50,7 @@ You can pass some arguments as query parameters to the URL to customize the widg
 
 | Name           | Format                               | Example                                                | Default value |
 | -------------- | ------------------------------------ | ------------------------------------------------------ | ------------- |
+| apiKey         | Alphanumeric string                  | `?apiKey=yourAPIkey`                                   | Not set       |
 | defaultCrypto  | Cryptocurrency code                  | `?defaultCrypto=BTC`                                   | Not set       |
 | defaultAmount  | Positive integer                     | `?defaultAmount=500`                                   | 100           |
 | defaultAddrs   | Stringified JSON                     | `?addresses={"BTC":["addr1"],"ETH":["add1r","addr2"]}` | {}            |
