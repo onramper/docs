@@ -8,8 +8,10 @@ Onramper consist of a [widget](#the-widget) and an [API](#the-api). The API is, 
 ## Integrated fiat gateways
 Currently, the integrated gateways are:  
 · <a href="https://moonpay.io" target="_blank">Moonpay</a>  
-· <a href="https://sendwyre.com" target="_blank">Wyre (soon)</a>  
-· <a href="https://www.coinify.com/" target="_blank">Coinify (soon)</a>  
+· <a href="https://sendwyre.com" target="_blank">Wyre</a>  
+· <a href="https://xanpool.com/" target="_blank">Xanpool (soon)</a>  
+· <a href="https://mercuryo.io/" target="_blank">Mercuryo (soon)</a>  
+· <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (soon)</a>  
 · <a href="https://cryptocoin.pro" target="_blank">Cryptocoin.pro (soon)</a>  
 
 We'll continue to contract with and integrate additional gateways. We'll also be adding an offramp soon (allowing users to sell crypto for fiat).  
@@ -23,7 +25,7 @@ The widget can be easily implemented on your app/wallet, so you can focus on get
 · [Technical overview of how the widget works](https://github.com/onramper/widget/blob/dev/README.md)  
   
 # The API
-**The API is currently unavailable.**
+**For API access, contact us directly at <a href="mailto:api@onramper.com" target="_blank">api@onramper.com</a>.**
 Onramper can soon be implemented by connecting to our API. As such, businesses will be able to integrate Onramper however they want. Connecting by API is more work, but allows you to build your own UX/UI.
 
 · [See the reference list of API endpoints](./API-Reference.md)  
