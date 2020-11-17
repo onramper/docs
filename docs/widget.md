@@ -8,7 +8,7 @@ You can integrate the widget in four different ways:
 · Import a component in your React application. [See more.](#react-component)   
 · Add it to your static webpage using a CDN import. [See more.](#javascript)   
 
-## Redirect / Iframe
+## Redirect
 
 
 Using a URL redirect, you can simply redirect your users to a buy page. The widget url is `https://widget.onramper.com`
@@ -36,12 +36,11 @@ Embed an iframe in your website. This is the easiest way to add the widget on yo
     width="440px"
     title="Onramper widget"
     frameborder="no"
-    allowtransparency="true"
     style="box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);">
 </iframe>
 ```
 ###### Live example & customization
-Iframe customization example: <a href="https://codesandbox.io/s/onramper-widget-iframe-b038x" target='_blank' >CodeSandbox</a>
+<a href="https://codepen.io/thijsmaaslaw/pen/eYzbgXM" target='_blank' >Iframe customization example</a>
 
 #### URL parameters
 You can pass some arguments as query parameters to the URL to customize the widget
