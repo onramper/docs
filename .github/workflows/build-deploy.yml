@@ -2,7 +2,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [ master, dev ]
+    branches: [ master ]
   pull_request:
 
 jobs:
@@ -25,24 +25,10 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Get git branch
-      id: git-branch
-      run: |
-        if [ $REF == 'refs/heads/master' ]
-        then
-          echo "::set-output name=domain::docs.onramper.com"
-        elif [ $REF == 'refs/heads/dev' ]
-        then
-          echo "::set-output name=domain::docs.onramper.dev"
-        else
-          exit 1
-        fi
-      env:
-        REF: ${{ github.ref }}
     - name: Download artifacts from build job
       uses: actions/download-artifact@v2
       with:
@@ -53,5 +39,5 @@ jobs:
       with:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        domain: ${{ steps.git-branch.outputs.domain }}
+        domain: 'docs.onramper.com'
         publish_dir: './site'
