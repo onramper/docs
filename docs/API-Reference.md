@@ -1,7 +1,7 @@
 ## Gateways
 Endpoint: `https://api.onramper.com/gateways`  
 
-Get a list of available gateways. The info provided of this gateways is the cryptocurrencies, currencies an payment methods accepted. Also provides localization data on the user, which can be used to customize the widget. [See response type definitions here](https://github.com/onramper/widget/tree/dev/src/OnramperWidget/ApiContext/api/types).
+Get a list of available gateways. The info provided of this gateways is the cryptocurrencies, currencies an payment methods accepted. Also provides localization data on the user, which can be used to customize the widget. [See response type definitions here](https://github.com/onramper/widget/tree/master/package/src/ApiContext/api/types).
 
 ##### Options
 | Option       | Description                                                                                                                                                                                                                                                                                                                                  |
