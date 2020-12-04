@@ -1,5 +1,5 @@
 ## Gateways
-Endpoint: `https://api.onramper.com/gateways`  
+Endpoint: `GET https://api.onramper.com/gateways`  
 
 Get a list of available gateways. The info provided of this gateways is the cryptocurrencies, currencies an payment methods accepted. Also provides localization data on the user, which can be used to customize the widget. [See response type definitions here](https://github.com/onramper/widget/tree/master/package/src/ApiContext/api/types).
 
@@ -46,7 +46,7 @@ Get a list of available gateways. The info provided of this gateways is the cryp
 ```
 
 ## Rates
-Endpoint: `https://api.onramper.com/rate/{fromCurrency}/{toCurrency}/{paymentMethod}/{amount}`  
+Endpoint: `GET https://api.onramper.com/rate/{fromCurrency}/{toCurrency}/{paymentMethod}/{amount}`  
 
 Get a list of accessable gateways. Those gateways can be availables or unavailables. The available gateways will have the attribute `available` set to `true`, and an [attribute `nextStep`](#steps) describing the first action should be done to start the [purchase flow](#purchase-flow). The unavailable gateways will have the attribute `available` set to `false`, and an attribute `error` describing why is the gateway unavailable (e.g. Maximum amount exceeded).
 
