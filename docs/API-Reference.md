@@ -15,6 +15,7 @@ Get a list of available gateways. The info provided of this gateways is the cryp
 {
   "gateways": [
     {
+      "identifier": "Wyre",
       "paymentMethods": [
         "creditCard",
         "bankTransfer"
