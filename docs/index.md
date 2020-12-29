@@ -9,10 +9,10 @@ Onramper consist of a [widget](#the-widget) and an [API](#the-api). The API is, 
 Currently, the integrated gateways are:  
 · <a href="https://moonpay.io" target="_blank">Moonpay</a>  
 · <a href="https://sendwyre.com" target="_blank">Wyre</a>  
-· <a href="https://xanpool.com/" target="_blank">Xanpool (soon)</a>  
-· <a href="https://mercuryo.io/" target="_blank">Mercuryo (soon)</a>  
-· <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (soon)</a>  
-· <a href="https://cryptocoin.pro" target="_blank">Cryptocoin.pro (soon)</a>  
+· <a href="https://xanpool.com/" target="_blank">Xanpool</a>  
+· <a href="https://mercuryo.io/" target="_blank">Mercuryo (Jan.)</a>  
+· <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (Jan.)</a>  
+· <a href="https://www.coinify.com/" target="_blank">Coinify (soon)</a>  
 
 We'll continue to contract with and integrate additional gateways. We'll also be adding an offramp soon (allowing users to sell crypto for fiat).  
 
