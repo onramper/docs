@@ -50,7 +50,7 @@ You can pass some arguments as query parameters to the URL to customize the widg
 | apiKey         | Alphanumeric string                  | `?apiKey=yourAPIkey` <a href="mailto:apikeys@onramper.com" target='_blank' >(contact us for keys)</a>             | Not set       |
 | defaultCrypto  | Cryptocurrency code                  | `?defaultCrypto=BTC`                                   | Not set       |
 | defaultAmount  | Positive integer                     | `?defaultAmount=500`                                   | 100           |
-| defaultAddrs   | Stringified JSON                     | `?addresses={"BTC":["addr1"],"ETH":["add1r","addr2"]}` | {}            |
+| addresses   | Stringified JSON                     | `?addresses={"BTC":["addr1"],"ETH":["add1r","addr2"]}` | {}            |
 | onlyCryptos    | Comma-separated list of crypto codes | `?onlyCryptos=BTC,ETH,NEO`                             | Not set       |
 | excludeCryptos | Comma-separated list of crypto codes | `?excludeCryptos=BTC,ETH,NEO`                          | Not set       |
 | color          | Hexadecimal color                    | `?color=346eeb`                                        | 31a5ff        |
