@@ -15,7 +15,7 @@ Using a URL redirect, you can simply redirect your users to a buy page. The widg
 
 ###### HTML code snippet
 ```html
-<a href="https://widget.onramper.dev?color=1d2d50" target="_blank">
+<a href="https://widget.onramper.com?color=1d2d50" target="_blank">
     Buy cryptocurrencies
 </a>
 ```
@@ -31,7 +31,7 @@ Embed an iframe in your website. This is the easiest way to add the widget on yo
 ###### HTML code snippet
 ```html
 <iframe
-    src="https://widget.onramper.dev?color=346eeb"
+    src="https://widget.onramper.com?color=346eeb"
     height="595px"
     width="440px"
     title="Onramper widget"
@@ -50,9 +50,10 @@ You can pass some arguments as query parameters to the URL to customize the widg
 | apiKey         | Alphanumeric string                  | `?apiKey=yourAPIkey` <a href="mailto:apikeys@onramper.com" target='_blank' >(contact us for keys)</a>             | Not set       |
 | defaultCrypto  | Cryptocurrency code                  | `?defaultCrypto=BTC`                                   | Not set       |
 | defaultAmount  | Positive integer                     | `?defaultAmount=500`                                   | 100           |
-| addresses   | Stringified JSON                     | `?addresses={"BTC":["addr1"],"ETH":["add1r","addr2"]}` | {}            |
+| wallets        | List of crypto:address pairs         | `?&wallets=MIOTA:myaddress,BTC:mybtcaddress`           | Not set       |
 | onlyCryptos    | Comma-separated list of crypto codes | `?onlyCryptos=BTC,ETH,NEO`                             | Not set       |
 | excludeCryptos | Comma-separated list of crypto codes | `?excludeCryptos=BTC,ETH,NEO`                          | Not set       |
+| onlyGateways   | Comma-separated list of gateways     | `?onlyGateways=Moonpay,Wyre`                           | Not set       |
 | color          | Hexadecimal color                    | `?color=346eeb`                                        | 31a5ff        |
 
 ## React component
