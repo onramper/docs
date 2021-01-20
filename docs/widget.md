@@ -232,6 +232,19 @@ Onramper.initialize("#onramper-widget");
 | isAddressEditable | boolean?  | `Onramper.initialize("#id", {isAddressEditable:false"})`                                                                              | true          |
 | color             | string?   | `Onramper.initialize("#id", {color:"#000000"})`                                                                                       | "#31a5ff"     |
 
+## Native apps
+
+You can also include Onramper's widget in any native application using a WebView or any component that is able to render a website, as if it was an iframe, for this, you should point the source URI to `https://widget.onramper.com?apiKey=YOURAPIKEY`. You can also customize it using the [URL parameters](#url-parameters).
+
+Don't forget that iframes and webviews are isolated components so you should enable some features in order to allow the widget to work properly.
+
+This features are:
+
+- Camera and storage permission (in order to upload KYC documents)
+- Features: accelerometer; autoplay; camera; gyroscope; payment (required by one or more gateways in order to work properly)
+- Allow third party cookies (used by one or more gateways)
+- Allow the webview to open URLs with the OS browser (payment redirects required by one or more gateways)
+
 ## Customize
 
 You can pass the following arguments to customize the widget
