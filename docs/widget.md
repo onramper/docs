@@ -127,7 +127,7 @@ While importing the widget as a React component, you can customize it using the 
 
 | Name              | Type      | Example                                                                                         | Default value |
 | ----------------- | --------- | ----------------------------------------------------------------------------------------------- | ------------- |
-| API_KEY           | string?   | `"yourAPIkey"` <a href="mailto:apikeys@onramper.com" target='_blank' >(contact us for keys)</a> | undefined     |
+| API_KEY           | string?   | `"yourAPIkey"` <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >(fill in our onboarding form to receive your API key)</a> | undefined     |
 | defaultCrypto     | string?   | `"ETH"`                                                                                         | undefined     |
 | defaultFiat       | string?   | `"EUR"`                                                                                         | "USD"         |
 | defaultAmount     | number?   | `500`                                                                                           | 100           |
@@ -217,7 +217,7 @@ Onramper.initialize("#onramper-widget");
 
 | Name              | Type      | Example                                                                                                                               | Default value |
 | ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| API_KEY           | string?   | `Onramper.initialize("#id", {API_KEY:"YourAPIkey"})` <a href="mailto:apikeys@onramper.com" target='_blank' >(contact us for keys)</a> | undefined     |
+| API_KEY           | string?   | `Onramper.initialize("#id", {API_KEY:"YourAPIkey"})` <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >(fill in our onboarding form to receive your API key)</a> | undefined     |
 | defaultCrypto     | string?   | `Onramper.initialize("#id", {defaultCrypto:"ETH"})`                                                                                   | undefined     |
 | defaultFiat       | string?   | `Onramper.initialize("#id", {defaultFiat:"EUR"})`                                                                                     | "USD"         |
 | defaultAmount     | number?   | `Onramper.initialize("#id", {defaultAmount:500"})`                                                                                    | 100           |
