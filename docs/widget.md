@@ -16,11 +16,7 @@ Using a URL redirect, you can simply redirect your users to a buy page. The widg
 
 ```html
 <a href="https://widget.onramper.com?color=1d2d50" target="_blank">
-<<<<<<< HEAD
-    Buy cryptocurrencies
-=======
   Buy cryptocurrencies
->>>>>>> 94b95fb... Update parameters
 </a>
 ```
 
@@ -40,24 +36,17 @@ Note: in order to enable some features in the widget, don't forget to add the al
 
 ```html
 <iframe
-<<<<<<< HEAD
-    src="https://widget.onramper.com?color=346eeb"
-    height="595px"
-    width="440px"
-    title="Onramper widget"
-    frameborder="no"
-    style="box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);">
-=======
   src="https://widget.onramper.com?color=346eeb"
   height="595px"
   width="440px"
   title="Onramper widget"
   frameborder="0"
-  allow="accelerometer; autoplay; camera; gyroscope; payment"
-  style="box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);"
+  allow="accelerometer;
+  autoplay; camera; gyroscope; payment"
+  style="box-shadow: 3px 3px 5px 0px
+  rgba(0,0,0,0.75);"
 >
   <a href="https://widget.onramper.com" target="_blank">Buy crypto</a>
->>>>>>> 94b95fb... Update parameters
 </iframe>
 ```
 
