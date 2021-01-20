@@ -3,7 +3,7 @@
 Here you will find instructions to add the Onramper widget in your website or application. With just a few lines of code, you can allow your users to purchase cryptocurrencies from your web or app.
 
 You can integrate the widget in four different ways:  
-· Redirect your users to the widget URL. [See more.](#redirect)  
+· Redirect your users to the widget URL. [See more.](#referral-link)  
 · Use an iframe or a webview to embed the widget in your application. [See more.](#iframe)  
 · Import a component in your React application. [See more.](#react-component)  
 · Add it to your static webpage using a CDN import. [See more.](#javascript)
@@ -12,9 +12,11 @@ You can integrate the widget in four different ways:
 To allow users to buy crypto, you need an API key. To get an API key, fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >our onboarding form.</a>
 Add your API key as a parameter in the URL of the code snippet as follows: `https://widget.onramper.com?apiKEY=theAPIkeyyoureceived`. 
 
-## Redirect
+## Referral link
 
-Using a URL redirect, you can simply redirect your users to a buy page. The widget url is `https://widget.onramper.com`
+You can simply add a link to your app or website to redirect users to a page (hosted by us) where the users can buy crypto. The widget url is `https://widget.onramper.com`
+
+If you want to receive a referral fee for every transaction done by users coming from your website, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >fill in our onboarding form to receive your API key</a> and then add your API key to the link as follows: `https://widget.onramper.com?apiKEY=theAPIkeyyoureceived`. 
 
 ###### HTML code snippet
 
@@ -34,7 +36,7 @@ Redirect customization examples: <a href="https://codesandbox.io/s/onramper-widg
 
 Embed an iframe in your website. This is the easiest way to add the widget on your own page. Just copy-paste the code snippet below in your page. Customize your widget by [adding URL parameters](#url-parameters). 
 
-Note: In order to enable the widget for transactions, don't forget to [add the API key](#API-key). In order to enable some features in the widget, don't forget to add the allow attribute to the iframe element. 
+Note: In order to enable the widget for transactions, don't forget to [add your API key](#API-key). In order to enable some features in the widget, don't forget to add the allow attribute to the iframe element. 
 
 ###### HTML code snippet
 
