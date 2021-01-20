@@ -8,6 +8,10 @@ You can integrate the widget in four different ways:
 · Import a component in your React application. [See more.](#react-component)  
 · Add it to your static webpage using a CDN import. [See more.](#javascript)
 
+# API Key
+To allow users to buy crypto, you need an API key. To get an API key, fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >our onboarding form.</a>
+Add your API key as a parameter in the URL of the code snippet as follows: `https://widget.onramper.com?apiKEY=theAPIkeyyoureceived`. 
+
 ## Redirect
 
 Using a URL redirect, you can simply redirect your users to a buy page. The widget url is `https://widget.onramper.com`
@@ -28,9 +32,9 @@ Redirect customization examples: <a href="https://codesandbox.io/s/onramper-widg
 
 ## Iframe
 
-Embed an iframe in your website. This is the easiest way to add the widget on your own page.
+Embed an iframe in your website. This is the easiest way to add the widget on your own page. Just copy-paste the code snippet below in your page. Customize your widget by [adding URL parameters](#url-parameters). 
 
-Note: in order to enable some features in the widget, don't forget to add the allow attribute to the iframe element.
+Note: In order to enable the widget for transactions, don't forget to [add the API key](#API-key). In order to enable some features in the widget, don't forget to add the allow attribute to the iframe element. 
 
 ###### HTML code snippet
 
@@ -60,7 +64,7 @@ You can pass some arguments as query parameters to the URL to customize the widg
 
 | Name              | Format                                            | Example                                                                                               | Default value |
 | ----------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------- |
-| apiKey            | Alphanumeric string                               | `?apiKey=yourAPIkey` <a href="mailto:apikeys@onramper.com" target='_blank' >(contact us for keys)</a> | Not set       |
+| apiKey            | Alphanumeric string                               | `?apiKey=yourAPIkey` <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >(fill in our onboarding form to receive your API key)</a> | Not set       |
 | defaultCrypto     | Cryptocurrency code                               | `?defaultCrypto=BTC`                                                                                  | BTC           |
 | defaultFiat       | Fiat code                                         | `?defaultFiat=EUR`                                                                                    | USD           |
 | defaultAmount     | Positive integer                                  | `?defaultAmount=500`                                                                                  | 100           |
