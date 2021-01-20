@@ -3,7 +3,7 @@
 Here you will find instructions to add the Onramper widget in your website or application. With just a few lines of code, you can allow your users to purchase cryptocurrencies from your web or app.
 
 You can integrate the widget in four different ways:  
-· Redirect your users to the widget URL. [See more.](#referral-link)  
+· Redirect your users to the widget URL with a referral link. [See more.](#referral-link)  
 · Use an iframe or a webview to embed the widget in your application. [See more.](#iframe)  
 · Import a component in your React application. [See more.](#react-component)  
 · Add it to your static webpage using a CDN import. [See more.](#javascript)
