@@ -29,7 +29,7 @@ The widget can be easily implemented on your app/wallet, so you can focus on get
 Onramper can soon be implemented by connecting to our API. As such, businesses will be able to integrate Onramper however they want. Connecting by API is more work, but allows you to build your own UX/UI.
 
 · [See the reference list of API endpoints](./API-Reference.md)  
-· [API wrappers (under development)](./apicontext.md)  
+· API wrappers (under development)
   
 # Fees
 Users pay fees for the conversion to the chosen fiat gateway. Additionally, end-users pay 1% of the tx to Onramper. However, end-users still pay less in fees than without Onramper, as the lowest fee gateway will always be available for their transactions. Additionally, Onramper procures lower rates than normally charged by gateways . 
