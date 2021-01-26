@@ -266,16 +266,23 @@ You can pass the following arguments to customize the widget
 | defaultCrypto           | Select a specific cryptocurrency by default. Should be specified the cryptocurrency code.                                                                                                                                          |
 | defaultFiat             | Fiat currency to select by default.                                                                                                                                                                                                |
 | defaultFiatSoft         | Fiat currency to select by default only when the country currency is unavailable.                                                                                                                                                  |
-| defaultPaymentMethod    | Payment method to select by default.                                                                                                                                                                                               |
+| defaultPaymentMethod    | Payment method to select by default. [See posible values here.](#payment-method-ids)                                                                                                                                                    |
 | defaultAmount           | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied.                                |
 | defaultAddrs \| wallets | A stringified JSON with the wallet addresses of the user. The keys should be the cryptocurrency code and the value a list containing the user addresses. Can be more than one address per wallet and more than one cryptocurrency. |
 | onlyCryptos             | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.                                                                                                                                    |
 | excludeCryptos          | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos.                                                                                                               |
-| onlyFiat                | Only the fiat currencies added here will be available to pick.                                                                                                                                                                    |
-| excludeFiat             | The fiat currencies added here will be excluded from the available ones.                                                                                                                                                          |
-| onlyPaymentMethods      | Only the payment methods added here will be available to pick.                                                                                                                                                                    |
-| excludePaymentMethods   | The payment methods added here will be excluded from the available ones.                                                                                                                                                          |
+| onlyFiat                | Only the fiat currencies added here will be available to pick.                                                                                                                                                                     |
+| excludeFiat             | The fiat currencies added here will be excluded from the available ones.                                                                                                                                                           |
+| onlyPaymentMethods      | Only the payment methods added here will be available to pick. [See posible values here.](#payment-method-ids)                                                                                                                          |
+| excludePaymentMethods   | The payment methods added here will be excluded from the available ones. [See posible values here.](#payment-method-ids)                                                                                                                |
 | onlyGateways            | Only the gateways added here will be availables. By default all are availables.                                                                                                                                                    |
 | isAddressEditable       | Allow the user to edit the crypto address that is passed through the parameter defaultAddrs or wallets.                                                                                                                            |
 | color                   | Color to change the highlight of the widget. Should be an hex color.                                                                                                                                                               |
 | fontFamily              | Font to use in the widget.                                                                                                                                                                                                         |
+
+#### Payment method IDs
+
+IDs of all posible payment methods:
+
+
+`creditCard`, `bankTransfer`, `applePay`, `googlePay`, `paynow`, `fps`, `alipay-hk`, `prompt-pay`, `instapay`, `upi`, `gojek-id`, `viettel-pay`, `duit-now`
