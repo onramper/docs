@@ -10,7 +10,7 @@ Currently, the integrated gateways are:
 · <a href="https://moonpay.io" target="_blank">Moonpay</a>  
 · <a href="https://sendwyre.com" target="_blank">Wyre</a>  
 · <a href="https://xanpool.com/" target="_blank">Xanpool</a>  
-· <a href="https://mercuryo.io/" target="_blank">Mercuryo (Jan.)</a>  
+· <a href="https://mercuryo.io/" target="_blank">Mercuryo</a>  
 · <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (Jan.)</a>  
 · <a href="https://www.coinify.com/" target="_blank">Coinify (soon)</a>  
 
