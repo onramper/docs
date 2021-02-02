@@ -74,7 +74,7 @@ You can pass some arguments as query parameters to the URL to customize the widg
 | defaultCrypto     | Cryptocurrency code                               | `?defaultCrypto=BTC`                                                                                                                                                                                                      | BTC                  |
 | defaultFiat       | Fiat code                                         | `?defaultFiat=EUR`                                                                                                                                                                                                        | USD                  |
 | defaultAmount     | Positive integer                                  | `?defaultAmount=500`                                                                                                                                                                                                      | 100                  |
-| wallets           | Comma-separated list of crypto code:address pairs | `?wallets=BTC:btcaddr,ETH:erc20addr`                                                                                                                                                                                      | Not set              |
+| wallets           | Comma-separated list of crypto code:address;memo. Being `;memo` optional | `?wallets=BTC:btcaddr,BNB:binanceAddress;addressTag`                                                                                                                                                                                      | Not set              |
 | onlyCryptos       | Comma-separated list of crypto codes              | `?onlyCryptos=BTC,ETH,NEO`                                                                                                                                                                                                | Not set              |
 | excludeCryptos    | Comma-separated list of crypto codes              | `?excludeCryptos=BTC,ETH,NEO`                                                                                                                                                                                             | Not set              |
 | excludeFiat       | Comma-separated list of fiat codes                | `?excludeCryptos=EUR,USD`                                                                                                                                                                                                 | Not set              |
@@ -103,12 +103,13 @@ $ npm install @onramper/widget
 ```javascript
 import OnramperWidget from "@onramper/widget";
 
-const userAddresses = {
-    "BTC": ["addr1"],
-    "ETH": ["add1r"]
-}
-
 export default function WidgetContainer() {
+
+  const wallets = {
+      "BTC": { address: "btcAddr" },
+      "BNB": { address: "bnbAddress", memo: "cryptoTag" }
+  }
+
   return (
     <div
       style={{
@@ -116,12 +117,9 @@ export default function WidgetContainer() {
         height: "595px"
       }}
     >
-      <OnramperWidget defaultCrypto="BTC" />
+      <OnramperWidget defaultCrypto="BTC" defaultAddrs={wallets} />
     </div>
   )
-
-
-  <OnramperWidget defaultAddrs={userAddresses} />;
 }
 ```
 
@@ -140,7 +138,7 @@ While importing the widget as a React component, you can customize it using the 
 | defaultCrypto     | string?   | `"ETH"`                                                                                                                                                                                                             | undefined            |
 | defaultFiat       | string?   | `"EUR"`                                                                                                                                                                                                             | "USD"                |
 | defaultAmount     | number?   | `500`                                                                                                                                                                                                               | 100                  |
-| defaultAddrs      | object?   | `{"BTC":["ADDR1"], "ETH":["ADDR2"]}`                                                                                                                                                                                | {}                   |
+| defaultAddrs      | object?   | `{"BTC": { address: "btcAddr" },"BNB": { address: "bnbAddress", memo: "cryptoTag" }}`                                                                                                                                                                                | {}                   |
 | onlyCryptos       | string[]? | `["BTC", "ETH", "NEO"]`                                                                                                                                                                                             | undefined            |
 | excludeCryptos    | string[]? | `["ETH", "NEO"]`                                                                                                                                                                                                    | undefined            |
 | onlyFiat          | string[]? | `["USD", "EUR"]`                                                                                                                                                                                                    | undefined            |
@@ -233,7 +231,7 @@ Onramper.initialize("#onramper-widget");
 | defaultCrypto     | string?   | `Onramper.initialize("#id", {defaultCrypto:"ETH"})`                                                                                                                                                                                                       | undefined     |
 | defaultFiat       | string?   | `Onramper.initialize("#id", {defaultFiat:"EUR"})`                                                                                                                                                                                                         | "USD"         |
 | defaultAmount     | number?   | `Onramper.initialize("#id", {defaultAmount:500"})`                                                                                                                                                                                                        | 100           |
-| defaultAddrs      | object?   | `Onramper.initialize("#id", {defaultAddrs:{"BTC":["ADDR1"], "ETH":["ADDR2"]}})`                                                                                                                                                                           | {}            |
+| defaultAddrs      | object?   | `Onramper.initialize("#id", {defaultAddrs:{"BTC": { address: "btcAddr" }}})`                                                                                                                                                                           | {}            |
 | onlyCryptos       | string[]? | `Onramper.initialize("#id", {onlyCryptos:["BTC", "ETH", "NEO"]})`                                                                                                                                                                                         | undefined     |
 | excludeCryptos    | string[]? | `Onramper.initialize("#id", {excludeCryptos:["ETH", "NEO"]})`                                                                                                                                                                                             | undefined     |
 | onlyFiat          | string[]? | `Onramper.initialize("#id", {onlyFiat:["EUR"]})`                                                                                                                                                                                                          | undefined     |
@@ -268,7 +266,7 @@ You can pass the following arguments to customize the widget
 | defaultFiatSoft         | Fiat currency to select by default only when the country currency is unavailable.                                                                                                                                                  |
 | defaultPaymentMethod    | Payment method to select by default. [See posible values here.](#payment-method-ids)                                                                                                                                                    |
 | defaultAmount           | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied.                                |
-| defaultAddrs \| wallets | A stringified JSON with the wallet addresses of the user. The keys should be the cryptocurrency code and the value a list containing the user addresses. Can be more than one address per wallet and more than one cryptocurrency. |
+| defaultAddrs \| wallets | Used to autofill the crypto address of the user. |
 | onlyCryptos             | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.                                                                                                                                    |
 | excludeCryptos          | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos.                                                                                                               |
 | onlyFiat                | Only the fiat currencies added here will be available to pick.                                                                                                                                                                     |
