@@ -1,16 +1,16 @@
 ## Gateways
-Endpoint: `GET https://api.onramper.com/gateways`  
+Endpoint: `GET https://onramper.tech/gateways`  
 
 Get a list of available gateways. The info provided of this gateways is the cryptocurrencies, currencies an payment methods accepted. Also provides localization data on the user, which can be used to customize the widget. [See response type definitions here](https://github.com/onramper/widget/tree/master/package/src/ApiContext/api/types).
 
 ##### Options
 | Option       | Description                                                                                                                                                                                                                                                                                                                                  |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| country      | Defines which gateways are available. By default is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get the a union of the available options for all countries just set the country to 'all'.  `E.g. https://api.onramper.com/gateways?country=es` |
-| includeIcons | If `true`, includes icons of the cryptos, currencies and payment methods in the response. `E.g. https://api.onramper.com/gateways?includeIcons=true`                                                                                                                                                                                         |
+| country      | Defines which gateways are available. By default is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get the a union of the available options for all countries just set the country to 'all'.  `E.g. https://onramper.tech/gateways?country=es` |
+| includeIcons | If `true`, includes icons of the cryptos, currencies and payment methods in the response. `E.g. https://onramper.tech/gateways?includeIcons=true`                                                                                                                                                                                         |
 
 ##### Example response
-`https://api.onramper.com/gateways`
+`https://onramper.tech/gateways`
 ```json
 {
   "gateways": [
@@ -47,7 +47,7 @@ Get a list of available gateways. The info provided of this gateways is the cryp
 ```
 
 ## Rates
-Endpoint: `GET https://api.onramper.com/rate/{fromCurrency}/{toCurrency}/{paymentMethod}/{amount}`  
+Endpoint: `GET https://onramper.tech/rate/{fromCurrency}/{toCurrency}/{paymentMethod}/{amount}`  
 
 Get a list of accessable gateways. Those gateways can be availables or unavailables. The available gateways will have the attribute `available` set to `true`, and an [attribute `nextStep`](#steps) describing the first action should be done to start the [purchase flow](#purchase-flow). The unavailable gateways will have the attribute `available` set to `false`, and an attribute `error` describing why is the gateway unavailable (e.g. Maximum amount exceeded).
 
@@ -62,12 +62,12 @@ Url variables `{fromCurrency}` and `{toCurrency}` should be filled with currency
 ##### Options
 | Option         | Description                                                                                                                                                                                                                                                                                                                                  |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| country        | Defines which gateways are available. By default is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get the a union of the available options for all countries just set the country to 'all'.  `E.g. https://api.onramper.com/gateways?country=es` |
-| includeIcons   | If `true`, includes icons of the cryptos, currencies and payment methods in the response. `E.g. https://api.onramper.com/gateways?includeIcons=true`                                                                                                                                                                                         |
-| amountInCrypto | If `true`, the amount specified in `{amount}` represents the amount of crypto user wants to buy. `E.g. https://api.onramper.com/rate/EUR/BTC/creditCard/100?amountInCrypto=true`                                                                                                                                                             |
+| country        | Defines which gateways are available. By default is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get the a union of the available options for all countries just set the country to 'all'.  `E.g. https://onramper.tech/gateways?country=es` |
+| includeIcons   | If `true`, includes icons of the cryptos, currencies and payment methods in the response. `E.g. https://onramper.tech/gateways?includeIcons=true`                                                                                                                                                                                         |
+| amountInCrypto | If `true`, the amount specified in `{amount}` represents the amount of crypto user wants to buy. `E.g. https://onramper.tech/rate/EUR/BTC/creditCard/100?amountInCrypto=true`                                                                                                                                                             |
 
 ##### Example response
-`https://api.onramper.com/rate/EUR/BTC/creditCard/100`
+`https://onramper.tech/rate/EUR/BTC/creditCard/100`
 ```json
 [
   {
@@ -93,7 +93,7 @@ Url variables `{fromCurrency}` and `{toCurrency}` should be filled with currency
     "receivedCrypto": 0.01013,
     "nextStep": {
       "type": "form",
-      "url": "https://api.onramper.com/transaction/Moonpay/email/WyJ0VjVIQWpaQ3lsUzZVRHJxRDhqN0FBLS0iLDEwMCwiRVVSIiwiQlRDIiwiY3JlZGl0Q2FyZCJd",
+      "url": "https://onramper.tech/transaction/Moonpay/email/WyJ0VjVIQWpaQ3lsUzZVRHJxRDhqN0FBLS0iLDEwMCwiRVVSIiwiQlRDIiwiY3JlZGl0Q2FyZCJd",
       "data": [
         {
           "type": "string",
@@ -159,7 +159,7 @@ Given
 ....
 "nextStep": {
       "type": "form",
-      "url": "https://api.onramper.com/transaction/Moonpay/email/WyJ0VjVIQWpaQ3lsUzZVRHJxRDhqN0FBLS0iLDEwMCwiRVVSIiwiQlRDIiwiY3JlZGl0Q2FyZCJd",
+      "url": "https://onramper.tech/transaction/Moonpay/email/WyJ0VjVIQWpaQ3lsUzZVRHJxRDhqN0FBLS0iLDEwMCwiRVVSIiwiQlRDIiwiY3JlZGl0Q2FyZCJd",
       "data": [
         {
           "type": "string",
@@ -192,7 +192,7 @@ Success step response example (the response is a new step):
 ```json
 {
    "type":"form",
-   "url":"https://api.onramper.com/transaction/Moonpay/verifyEmail/WyJIQVdMOGJwM1I4RmFMeGpDTUNTOUtnLS0iLCJkYXJlbjQ0dl93NDgxbEB4ZWRtaS5jb20iXQ==",
+   "url":"https://onramper.tech/transaction/Moonpay/verifyEmail/WyJIQVdMOGJwM1I4RmFMeGpDTUNTOUtnLS0iLCJkYXJlbjQ0dl93NDgxbEB4ZWRtaS5jb20iXQ==",
    "data":[
       {
          "type":"string",
