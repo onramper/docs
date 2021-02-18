@@ -11,7 +11,7 @@ You can integrate the widget in four different ways:
 # API Key
 
 To allow users to buy crypto, you need an API key. To get an API key, fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >our onboarding form.</a>
-Add your API key as a parameter in the URL of the code snippet as follows: `https://widget.onramper.com?apiKkey=theAPIkeyyoureceived`.
+Add your API key as a parameter in the URL of the code snippet as follows: `https://widget.onramper.com?apiKey=theAPIkeyyoureceived`.
 
 Note: data retrieved with a test key can be not accurate, for real time prices use a production key.
 
@@ -45,7 +45,7 @@ Note: In order to enable the widget for transactions, don't forget to [add your 
 
 ```html
 <iframe
-  src="https://widget.onramper.com?color=346eeb"
+  src="https://widget.onramper.com?color=346eeb&apiKey=pk_test_x5M_5fdXzn1fxK04seu0JgFjGsu7CH8lOvS9xZWzuSM0"
   height="595px"
   width="440px"
   title="Onramper widget"
