@@ -252,6 +252,7 @@ This features are:
 - Camera and storage permission (in order to upload KYC documents)
 - Features: accelerometer; autoplay; camera; gyroscope; payment (required by one or more gateways in order to work properly)
 - Allow third party cookies (used by one or more gateways)
+- Allow the webview to open URLs automatically, without user interaction (payment redirects required by one or more gateways)
 - Allow the webview to open URLs with the OS browser (payment redirects required by one or more gateways)
 
 ## Customize
