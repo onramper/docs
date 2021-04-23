@@ -32,7 +32,7 @@ Onramper can soon be implemented by connecting to our API. As such, businesses w
 · API wrappers (under development)
   
 # Fees
-Users pay fees for the conversion to the chosen fiat gateway. Additionally, end-users pay 1% of the tx to Onramper. However, end-users still pay less in fees than without Onramper, as the lowest fee gateway will always be available for their transactions. Additionally, Onramper procures lower rates than normally charged by gateways . 
+Users pay fees for the conversion to the chosen fiat gateway. Additionally, end-users pay 1% of the tx to Onramper. However, end-users still pay less in fees than without Onramper as we ensure the lowest fee gateway will always be available for their transactions, which usually saves users far more than 1%. Additionally, Onramper procures lower rates than normally charged by gateways. 
 
-You can also add your own fees on top of every transaction. For this you'll need to use a special API key provided by us, which you can get by contacting us at thijs@onramper.com or via telegram at 'tmmmaas'.
+You can also add your own fees on top of every transaction. For this you'll need to use a special API key provided by us. Please fill in our <a href ="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform" taget="_blank">client onboarding form.</a>
 
