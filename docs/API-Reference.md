@@ -1,3 +1,9 @@
+## API overview
+
+##### Authentication
+You should include to all request the header `Authorization` with value `Basic API_KEY`. For example `Basic pk_prod_xxxxxxxxxxxxxxxxxxxxxxxx`.
+
+
 ## Gateways
 Endpoint: `GET https://onramper.tech/gateways`  
 
@@ -126,7 +132,12 @@ Url variables `{fromCurrency}` and `{toCurrency}` should be filled with currency
 ```
 
 ## Steps
-The purchase flow is splitted in different steps. User should complete all steps to make a successful purchase. You will find the first step to execute in the attribute `nextStep` of the available gateway selected from the `/rate` response and the following steps in the responses of the steps executed.
+The purchase flow is splitted in different steps. User should complete all steps to make a successful purchase.
+
+##### First step
+You will find the first step to execute in the attribute `nextStep` of the available gateway selected from the `/rate` response and the following steps as the response of the executed step.
+
+If you want to attach a custom object to the transaction the user will start, then you should append it to the body of the `POST` request of the first step (usually a `form`  a `wait` step). You should add your custom object under the key `partnerContext` in the request body. In case the first step is a `form` step, the `partnerContext` key will be next to the other requested fields.
 
 ##### Purchase flow
 1. First we call to `/gateways` to get a list of the cryptos, currencies and payment methods availables.
@@ -143,8 +154,9 @@ The purchase flow is splitted in different steps. User should complete all steps
 
 | Step                   | Description                                                                                                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| wait                   | Waiting step. The server is processing some data and there's no action to be done now, user should wait. To execute make a `POST` request to the `url` attribute. The response will be another waiting step until the server has finished the current data processing, the app should query the following waiting steps until the server responds with another type of step. |
 | form                   | Form step. Describes a set of fields that should be filled by the user. To execute make a `POST` request to the `url` attribute with the fields as a body request. |
-| iframe                 | For execute this step, display to the user an iframe if the `url` attribute, listen to 'messages' of the iframe window to get the next step.                       |
+| iframe                 | External widget/iframe step. For execute this step, display to the user an iframe if the `url` attribute, listen to 'messages' of the iframe window to get the next step.                       |
 | redirect               | The user should be redirected to the url specified in the `url` attribute. Listen to 'messages' of the redirected window to get the next step.                     |
 | pickOne                | User can choose to complete one of the steps listed in the `options` attribute.                                                                                    |
 | file                   | User should upload a file. To execute make a `PUT` request to the `url` attribute.                                                                                 |
@@ -181,11 +193,24 @@ We make a request to `nextStep.url` with the following body:
 ```
 {
   "email": "hello@onramper.com",
-  "cryptocurrencyAddress": "0xce46a79f871cf0b05a5ef20ff041c92a007d507e"
+  "cryptocurrencyAddress": "0xce46a79f871cf0b05a5ef20ff041c92a007d507e",
+  // only if it's the first step and you want to attach a custom context
+  "partnerContext": {
+    myTxId: "00d471bd-9b97-4503-b75e-c0199860c198"
+    myUserId: 65165468,
+    lastTab: "wallet-funds",
+  }
 }
 ```
 
-If the body is correct, we will get a new step in the response, if not, we will get an error (e.g `{"message":"The provided cryptocurrency address is not valid.","field":"cryptocurrencyAddress"}`)
+If the body is correct, we will get a new step in the response, if not, we will get an error, for example:
+
+```json
+{
+  "message":"The provided cryptocurrency address is not valid.",
+  "field":"cryptocurrencyAddress"
+}
+```
 
 Success step response example (the response is a new step):
 
@@ -202,3 +227,101 @@ Success step response example (the response is a new step):
    ]
 }
 ```
+
+## Testing
+To execute the transactions in a testing enviroment make sure you use your test API Key in the `Authorization` header. For example `Basic pk_test_xxxxxxxxxxxxxxxxxxxxxxxx`.
+
+**Moonpay**
+
+Test card number for 3D Secure transactions
+Visa    `4000 0209 5159 5032`    `12/2022`    `123`
+
+Test card number for declined transactions
+Visa    `4000 3198 7280 7223`    `12/2022`    `123`
+
+**Wyre**
+
+
+Test card number
+`4111 1111 1111 1111`    `01/2023`    `123`
+
+2FA codes (sms/card)
+`000000`
+
+
+## Webhooks
+Webhooks perform signed POST requests about specific events to a URL of your choice. If you respond with a 2xx code, our system will consider the webhook as successfully sent and received.
+
+In order to receive webhooks, you must provide Onramper with a URL that the webhooks will be sent to, a shared secret will be shared privately with you in order to verify the webhook payload's signature.
+
+**Body**
+
+| Key                        | Description                                                                         |
+|----------------------------|-------------------------------------------------------------------------------------|
+| txId `string`              | Unique transaction identifier.                                                      |
+| inAmount `number`          | A positive integer representing how much the user is charged.                       |
+| inCurrency `string`        | The identifier of the fiat currency the user wants to use for the transaction.      |
+| outAmount `number`         | A positive integer representing the amount of cryptocurrency the user will receive. |
+| outCurrency `string`       | The identifier of the cryptocurrency the user wants to purchase.                    |
+| timestamp `number`         | Time at which the object was created. Returned as Unix timestamp.                   |
+| gatewayIdentifier `string` | The identifier of the gateway used to execute the purchase.                         |
+| medium `string`            | Payment method the user used (currently disabled)                                   |
+| partnerContext `object`    | Context for this event. Free context for partners to receive in webhooks.           |
+
+
+
+
+Example:
+```json
+{
+   "type":"form",
+   "url":"https://onramper.tech/transaction/Moonpay/verifyEmail/WyJIQVdMOGJwM1I4RmFMeGpDTUNTOUtnLS0iLCJkYXJlbjQ0dl93NDgxbEB4ZWRtaS5jb20iXQ==",
+   "data":[
+      {
+         "type":"string",
+         "name":"verifyEmailCode",
+         "humanName":"Email verification code"
+      }
+   ]
+}
+```
+
+**Partner context**
+If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response.  Currently is functionality is only available for `Moonpay` and `Wyre`.
+
+**Securing Webhooks**
+To ensure the integrity of the data contained in the webhook, Onramper signs all webhooks sent with a shared secret that is known only by you and Onramper.
+
+To sign the webhooks is used `HMAC-SHA256` using the shared secret as the key and the full request body as the message. The resulting signature is provided in the `X-Onramper-Webhook-Signature` HTTP header.
+
+In order to verify the webhook signature compute a HMAC with the SHA-256 hash function. Use the shared secret as the key, and use the full request body string as the message in both cases. Then compare the signature in the header with the expected signature.
+
+
+## Available gateways
+
+**Wyre**
+- Available in production.
+- Partner context available.
+- Onramper's custom flow.
+
+**Moonpay**
+- Available in production.
+- Partner context available.
+- Moonpay's widget flow available thorugh the API.
+- Onramper's custom flow available through an adapter. In order to use the custom Onramper flow with Moonpay you should use the npm package `@onramper/moonpay-adapter`, it works like a fetch mock so when Moonpay is selected, you will just have to forward the request to the Moonpay adapter. This is because of Moonpay policies, the code should be executed client side.
+
+**Xanpool**
+- Available in production.
+- Xanpool's widget flow.
+- Partner context soon will be supported.
+
+**Mercuryo**
+- Available in production.
+- Mercuryo's widget flow.
+- Partner context soon will be supported.
+
+**Coinify**
+- Available only for test enviroment. Soon in production.
+
+**Indacoin**
+- Soon available
