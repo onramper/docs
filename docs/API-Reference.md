@@ -1,18 +1,18 @@
 ## API overview
 
 ##### Authentication
-You should include to all request the header `Authorization` with value `Basic API_KEY`. For example `Basic pk_prod_xxxxxxxxxxxxxxxxxxxxxxxx`.
+With any request, you should include the header `Authorization` with value `Basic API_KEY`. For example `Basic pk_prod_xxxxxxxxxxxxxxxxxxxxxxxx`.
 
 
 ## Gateways
 Endpoint: `GET https://onramper.tech/gateways`  
 
-Get a list of available gateways. The info provided of this gateways is the cryptocurrencies, currencies an payment methods accepted. Also provides localization data on the user, which can be used to customize the widget. [See response type definitions here](https://github.com/onramper/widget/tree/master/package/src/ApiContext/api/types).
+Get a list of available gateways. The info provided about these gateways is: the cryptocurrencies, currencies an payment methods accepted. It also provides localization data on the user, which can be used to customize the widget. [See response type definitions here](https://github.com/onramper/widget/tree/master/package/src/ApiContext/api/types).
 
 ##### Options
 | Option       | Description                                                                                                                                                                                                                                                                                                                                  |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| country      | Defines which gateways are available. By default is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get the a union of the available options for all countries just set the country to 'all'.  `E.g. https://onramper.tech/gateways?country=es` |
+| country      | Defines which gateways are available. By default, the country is automatically detected by the API using client's IP but it can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get all the available options for all countries just set the country to 'all'.  `E.g. https://onramper.tech/gateways?country=es` |
 | includeIcons | If `true`, includes icons of the cryptos, currencies and payment methods in the response. `E.g. https://onramper.tech/gateways?includeIcons=true`                                                                                                                                                                                         |
 
 ##### Example response
@@ -55,20 +55,20 @@ Get a list of available gateways. The info provided of this gateways is the cryp
 ## Rates
 Endpoint: `GET https://onramper.tech/rate/{fromCurrency}/{toCurrency}/{paymentMethod}/{amount}`  
 
-Get a list of accessable gateways. Those gateways can be availables or unavailables. The available gateways will have the attribute `available` set to `true`, and an [attribute `nextStep`](#steps) describing the first action should be done to start the [purchase flow](#purchase-flow). The unavailable gateways will have the attribute `available` set to `false`, and an attribute `error` describing why is the gateway unavailable (e.g. Maximum amount exceeded).
+Get a list of accessable gateways. Those gateways can be available or unavailable. The available gateways will have the attribute `available` set to `true`, and an [attribute `nextStep`](#steps) describing the first action to be done to start the [purchase flow](#purchase-flow). The unavailable gateways will have the attribute `available` set to `false`, and an attribute `error` describing why the gateway is unavailable (e.g. Maximum amount exceeded).
 
 Url variables `{fromCurrency}` and `{toCurrency}` should be filled with currency codes and `{paymentMethod}` should be filled with one of the payment methods id's. Codes and id's are availables on the attributes `cryptoCurrencies`, `fiatCurrencies` and `paymentMethods` from [`/gateways` response](#gateways). Url variable {amount} is a positive integer.
 
 ##### URL
-  - **fromCurrency**: Currency we want to pay with, currently only fiat currencies are allowed.
-  - **toCurrency**: Currency we want to buy, currently only crypto currencies are allowed.
-  - **paymentMethod**: Payment method we want to use.
-  - **amount**: Amount of currency we want to buy, by default, amount of `fromCurrency`.
+  - **fromCurrency**: The Currency to pay with. Currently, only fiat currencies are allowed.
+  - **toCurrency**: The Currency to buy. Currently, only cryptocurrencies are allowed.
+  - **paymentMethod**: The Payment method to use.
+  - **amount**: The amount of currency to buy, by default, amount of `fromCurrency`.
 
 ##### Options
 | Option         | Description                                                                                                                                                                                                                                                                                                                                  |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| country        | Defines which gateways are available. By default is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get the a union of the available options for all countries just set the country to 'all'.  `E.g. https://onramper.tech/gateways?country=es` |
+| country        | Defines which gateways are available. By default, country is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get all the available options for all countries just set the country to 'all'. `E.g. https://onramper.tech/gateways?country=es` |
 | includeIcons   | If `true`, includes icons of the cryptos, currencies and payment methods in the response. `E.g. https://onramper.tech/gateways?includeIcons=true`                                                                                                                                                                                         |
 | amountInCrypto | If `true`, the amount specified in `{amount}` represents the amount of crypto user wants to buy. `E.g. https://onramper.tech/rate/EUR/BTC/creditCard/100?amountInCrypto=true`                                                                                                                                                             |
 
@@ -132,12 +132,12 @@ Url variables `{fromCurrency}` and `{toCurrency}` should be filled with currency
 ```
 
 ## Steps
-The purchase flow is splitted in different steps. User should complete all steps to make a successful purchase.
+The purchase flow is split in different steps, and depends on the gateway used for the transaction. Users should complete all steps to make a successful purchase.
 
 ##### First step
 You will find the first step to execute in the attribute `nextStep` of the available gateway selected from the `/rate` response and the following steps as the response of the executed step.
 
-If you want to attach a custom object to the transaction the user will start, then you should append it to the body of the `POST` request of the first step (usually a `form`  a `wait` step). You should add your custom object under the key `partnerContext` in the request body. In case the first step is a `form` step, the `partnerContext` key will be next to the other requested fields.
+If you want to attach a custom object to the transaction started by users, then you should append it to the body of the `POST` request of the first step (usually a `form`  a `wait` step). You should add your custom object under the key `partnerContext` in the request body. In case the first step is a `form` step, the `partnerContext` key will be next to the other requested fields.
 
 ##### Purchase flow
 1. First we call to `/gateways` to get a list of the cryptos, currencies and payment methods availables.
@@ -155,8 +155,8 @@ If you want to attach a custom object to the transaction the user will start, th
 | Step                   | Description                                                                                                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | wait                   | Waiting step. The server is processing some data and there's no action to be done now, user should wait. To execute make a `POST` request to the `url` attribute. The response will be another waiting step until the server has finished the current data processing, the app should query the following waiting steps until the server responds with another type of step. |
-| form                   | Form step. Describes a set of fields that should be filled by the user. To execute make a `POST` request to the `url` attribute with the fields as a body request. |
-| iframe                 | External widget/iframe step. For execute this step, display to the user an iframe if the `url` attribute, listen to 'messages' of the iframe window to get the next step.                       |
+| form                   | Form step. Describes a set of fields that should be filled by the user. To execute, make a `POST` request to the `url` attribute with the fields as a body request. |
+| iframe                 | External widget/iframe step, required in the flow of some gateways (for payment/KYC). To execute this step, display to the user an iframe of the `url` attribute, listen to 'messages' of the iframe window to get the next step.                       |
 | redirect               | The user should be redirected to the url specified in the `url` attribute. Listen to 'messages' of the redirected window to get the next step.                     |
 | pickOne                | User can choose to complete one of the steps listed in the `options` attribute.                                                                                    |
 | file                   | User should upload a file. To execute make a `PUT` request to the `url` attribute.                                                                                 |
@@ -230,6 +230,7 @@ Success step response example (the response is a new step):
 
 ## Testing
 To execute the transactions in a testing enviroment make sure you use your test API Key in the `Authorization` header. For example `Basic pk_test_xxxxxxxxxxxxxxxxxxxxxxxx`.
+When testing a transaction to buy BTC, make sure to use a test-net wallet address.
 
 **Moonpay**
 
@@ -241,7 +242,6 @@ Visa    `4000 3198 7280 7223`    `12/2022`    `123`
 
 **Wyre**
 
-
 Test card number
 `4111 1111 1111 1111`    `01/2023`    `123`
 
@@ -252,7 +252,7 @@ Test card number
 ## Webhooks
 Webhooks perform signed POST requests about specific events to a URL of your choice. If you respond with a 2xx code, our system will consider the webhook as successfully sent and received.
 
-In order to receive webhooks, you must provide Onramper with a URL that the webhooks will be sent to, a shared secret will be shared privately with you in order to verify the webhook payload's signature.
+In order to receive webhooks, you must provide Onramper with a URL that the webhooks will be sent to. A shared secret will be shared privately with you in order to verify the webhook payload's signature. Contact us for this secret.
 
 **Body**
 
@@ -287,14 +287,14 @@ Example:
 ```
 
 **Partner context**
-If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response.  Currently is functionality is only available for `Moonpay` and `Wyre`.
+If you would like to receive a custom data / tx identifier / partner context that is set by you in the webhook payload, you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response.  Currentl, this functionality is only available for `Moonpay` and `Wyre`.
 
 **Securing Webhooks**
 To ensure the integrity of the data contained in the webhook, Onramper signs all webhooks sent with a shared secret that is known only by you and Onramper.
 
-To sign the webhooks is used `HMAC-SHA256` using the shared secret as the key and the full request body as the message. The resulting signature is provided in the `X-Onramper-Webhook-Signature` HTTP header.
+Signing the webhooks is done using `HMAC-SHA256` with the shared secret as the key and the full request body as the message. The resulting signature is provided in the `X-Onramper-Webhook-Signature` HTTP header.
 
-In order to verify the webhook signature compute a HMAC with the SHA-256 hash function. Use the shared secret as the key, and use the full request body string as the message in both cases. Then compare the signature in the header with the expected signature.
+In order to verify the webhook signature, compute a HMAC with the SHA-256 hash function. Use the shared secret as the key, and use the full request body string as the message in both cases. Then compare the signature in the header with the expected signature.
 
 
 ## Available gateways
@@ -307,7 +307,7 @@ In order to verify the webhook signature compute a HMAC with the SHA-256 hash fu
 **Moonpay**
 - Available in production.
 - Partner context available.
-- Moonpay's widget flow available thorugh the API.
+- Moonpay's widget flow available through the API.
 - Onramper's custom flow available through an adapter. In order to use the custom Onramper flow with Moonpay you should use the npm package `@onramper/moonpay-adapter`, it works like a fetch mock so when Moonpay is selected, you will just have to forward the request to the Moonpay adapter. This is because of Moonpay policies, the code should be executed client side.
 
 **Xanpool**
