@@ -278,6 +278,8 @@ You can pass the following arguments to customize the widget
 | isAddressEditable       | Allow the user to edit the crypto address that is passed through the parameter defaultAddrs or wallets.                                                                                                                            |
 | color                   | Color to change the highlight of the widget. Should be an hex color.                                                                                                                                                               |
 | fontFamily              | Font to use in the widget.                                                                                                                                                                                                         |
+| gFontPath              | Allows you to load a remote Google Font. Eg. `css2?family=Roboto:wght@400;500&display=swap` widget.                                                                                                                                                                                                         |
+| redirectURL              | URL to redirect the user once a transaction is finished. Should be encoded.                                                                                                                                                                                                         |
 
 #### Payment method IDs
 
