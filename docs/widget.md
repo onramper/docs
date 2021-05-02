@@ -68,21 +68,21 @@ Note: In order to enable the widget for transactions, don't forget to [add your 
 You can pass some arguments as query parameters to the URL to customize the widget
 [For all parameters see CUSTOMIZE section](#customize)
 
-| Name              | Format                                            | Example                                                                                                                                                                                                                   | Default value        |
-| ----------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| apiKey            | Alphanumeric string                               | `?apiKey=yourAPIkey` <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >(fill in our onboarding form to receive your API key)</a> | Not set              |
-| defaultCrypto     | Cryptocurrency code                               | `?defaultCrypto=BTC`                                                                                                                                                                                                      | BTC                  |
-| defaultFiat       | Fiat code                                         | `?defaultFiat=EUR`                                                                                                                                                                                                        | USD                  |
-| defaultAmount     | Positive integer                                  | `?defaultAmount=500`                                                                                                                                                                                                      | 100                  |
-| wallets           | Comma-separated list of crypto code:address;memo. Being `;memo` optional | `?wallets=BTC:btcaddr,BNB:binanceAddress;addressTag`                                                                                                                                                                                      | Not set              |
-| onlyCryptos       | Comma-separated list of crypto codes              | `?onlyCryptos=BTC,ETH,NEO`                                                                                                                                                                                                | Not set              |
-| excludeCryptos    | Comma-separated list of crypto codes              | `?excludeCryptos=BTC,ETH,NEO`                                                                                                                                                                                             | Not set              |
-| excludeFiat       | Comma-separated list of fiat codes                | `?excludeCryptos=EUR,USD`                                                                                                                                                                                                 | Not set              |
-| onlyFiat          | Comma-separated list of fiat codes                | `?onlyFiat=EUR,USD`                                                                                                                                                                                                       | Not set              |
-| onlyGateways      | Comma-separated list of gateway identifiers       | `?onlyGateways=Wyre,Moonpay`                                                                                                                                                                                              | Not set              |
-| isAddressEditable | Boolean value                                     | `?isAddressEditable=false`                                                                                                                                                                                                | true                 |
-| color             | Hexadecimal color                                 | `?color=346eeb`                                                                                                                                                                                                           | 31a5ff               |
-| fontFamily        | font-family css string                            | `Arial, Helvetica, sans-serif`                                                                                                                                                                                            | 'Roboto', sans-serif |
+| Name              | Format                                                                   | Example                                                                                                                                                                                                                   | Default value        |
+| ----------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| apiKey            | Alphanumeric string                                                      | `?apiKey=yourAPIkey` <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >(fill in our onboarding form to receive your API key)</a> | Not set              |
+| defaultCrypto     | Cryptocurrency code                                                      | `?defaultCrypto=BTC`                                                                                                                                                                                                      | BTC                  |
+| defaultFiat       | Fiat code                                                                | `?defaultFiat=EUR`                                                                                                                                                                                                        | USD                  |
+| defaultAmount     | Positive integer                                                         | `?defaultAmount=500`                                                                                                                                                                                                      | 100                  |
+| wallets           | Comma-separated list of crypto code:address;memo. Being `;memo` optional | `?wallets=BTC:btcaddr,BNB:binanceAddress;addressTag`                                                                                                                                                                      | Not set              |
+| onlyCryptos       | Comma-separated list of crypto codes                                     | `?onlyCryptos=BTC,ETH,NEO`                                                                                                                                                                                                | Not set              |
+| excludeCryptos    | Comma-separated list of crypto codes                                     | `?excludeCryptos=BTC,ETH,NEO`                                                                                                                                                                                             | Not set              |
+| excludeFiat       | Comma-separated list of fiat codes                                       | `?excludeCryptos=EUR,USD`                                                                                                                                                                                                 | Not set              |
+| onlyFiat          | Comma-separated list of fiat codes                                       | `?onlyFiat=EUR,USD`                                                                                                                                                                                                       | Not set              |
+| onlyGateways      | Comma-separated list of gateway identifiers                              | `?onlyGateways=Wyre,Moonpay`                                                                                                                                                                                              | Not set              |
+| isAddressEditable | Boolean value                                                            | `?isAddressEditable=false`                                                                                                                                                                                                | true                 |
+| color             | Hexadecimal color                                                        | `?color=346eeb`                                                                                                                                                                                                           | 31a5ff               |
+| fontFamily        | font-family css string                                                   | `Arial, Helvetica, sans-serif`                                                                                                                                                                                            | 'Roboto', sans-serif |
 
 ## React component
 
@@ -104,22 +104,21 @@ $ npm install @onramper/widget
 import OnramperWidget from "@onramper/widget";
 
 export default function WidgetContainer() {
-
   const wallets = {
-      "BTC": { address: "btcAddr" },
-      "BNB": { address: "bnbAddress", memo: "cryptoTag" }
-  }
+    BTC: { address: "btcAddr" },
+    BNB: { address: "bnbAddress", memo: "cryptoTag" },
+  };
 
   return (
     <div
       style={{
         width: "440px",
-        height: "595px"
+        height: "595px",
       }}
     >
       <OnramperWidget defaultCrypto="BTC" defaultAddrs={wallets} />
     </div>
-  )
+  );
 }
 ```
 
@@ -138,7 +137,7 @@ While importing the widget as a React component, you can customize it using the 
 | defaultCrypto     | string?   | `"ETH"`                                                                                                                                                                                                             | undefined            |
 | defaultFiat       | string?   | `"EUR"`                                                                                                                                                                                                             | "USD"                |
 | defaultAmount     | number?   | `500`                                                                                                                                                                                                               | 100                  |
-| defaultAddrs      | object?   | `{"BTC": { address: "btcAddr" },"BNB": { address: "bnbAddress", memo: "cryptoTag" }}`                                                                                                                                                                                | {}                   |
+| defaultAddrs      | object?   | `{"BTC": { address: "btcAddr" },"BNB": { address: "bnbAddress", memo: "cryptoTag" }}`                                                                                                                               | {}                   |
 | onlyCryptos       | string[]? | `["BTC", "ETH", "NEO"]`                                                                                                                                                                                             | undefined            |
 | excludeCryptos    | string[]? | `["ETH", "NEO"]`                                                                                                                                                                                                    | undefined            |
 | onlyFiat          | string[]? | `["USD", "EUR"]`                                                                                                                                                                                                    | undefined            |
@@ -231,7 +230,7 @@ Onramper.initialize("#onramper-widget");
 | defaultCrypto     | string?   | `Onramper.initialize("#id", {defaultCrypto:"ETH"})`                                                                                                                                                                                                       | undefined     |
 | defaultFiat       | string?   | `Onramper.initialize("#id", {defaultFiat:"EUR"})`                                                                                                                                                                                                         | "USD"         |
 | defaultAmount     | number?   | `Onramper.initialize("#id", {defaultAmount:500"})`                                                                                                                                                                                                        | 100           |
-| defaultAddrs      | object?   | `Onramper.initialize("#id", {defaultAddrs:{"BTC": { address: "btcAddr" }}})`                                                                                                                                                                           | {}            |
+| defaultAddrs      | object?   | `Onramper.initialize("#id", {defaultAddrs:{"BTC": { address: "btcAddr" }}})`                                                                                                                                                                              | {}            |
 | onlyCryptos       | string[]? | `Onramper.initialize("#id", {onlyCryptos:["BTC", "ETH", "NEO"]})`                                                                                                                                                                                         | undefined     |
 | excludeCryptos    | string[]? | `Onramper.initialize("#id", {excludeCryptos:["ETH", "NEO"]})`                                                                                                                                                                                             | undefined     |
 | onlyFiat          | string[]? | `Onramper.initialize("#id", {onlyFiat:["EUR"]})`                                                                                                                                                                                                          | undefined     |
@@ -259,31 +258,30 @@ This features are:
 
 You can pass the following arguments to customize the widget
 
-| Name                    | Description                                                                                                                                                                                                                        |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| API_KEY                 | Production or test API Key.                                                                                                                                                                                                        |
-| defaultCrypto           | Select a specific cryptocurrency by default. Should be specified the cryptocurrency code.                                                                                                                                          |
-| defaultFiat             | Fiat currency to select by default.                                                                                                                                                                                                |
-| defaultFiatSoft         | Fiat currency to select by default only when the country currency is unavailable.                                                                                                                                                  |
-| defaultPaymentMethod    | Payment method to select by default. [See posible values here.](#payment-method-ids)                                                                                                                                                    |
-| defaultAmount           | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied.                                |
-| defaultAddrs \| wallets | Used to autofill the crypto address of the user. |
-| onlyCryptos             | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.                                                                                                                                    |
-| excludeCryptos          | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos.                                                                                                               |
-| onlyFiat                | Only the fiat currencies added here will be available to pick.                                                                                                                                                                     |
-| excludeFiat             | The fiat currencies added here will be excluded from the available ones.                                                                                                                                                           |
-| onlyPaymentMethods      | Only the payment methods added here will be available to pick. [See posible values here.](#payment-method-ids)                                                                                                                          |
-| excludePaymentMethods   | The payment methods added here will be excluded from the available ones. [See posible values here.](#payment-method-ids)                                                                                                                |
-| onlyGateways            | Only the gateways added here will be availables. By default all are availables.                                                                                                                                                    |
-| isAddressEditable       | Allow the user to edit the crypto address that is passed through the parameter defaultAddrs or wallets.                                                                                                                            |
-| color                   | Color to change the highlight of the widget. Should be an hex color.                                                                                                                                                               |
-| fontFamily              | Font to use in the widget.                                                                                                                                                                                                         |
-| gFontPath              | Allows you to load a remote Google Font. Eg. `css2?family=Roboto:wght@400;500&display=swap` widget.                                                                                                                                                                                                         |
-| redirectURL              | URL to redirect the user once a transaction is finished. Should be encoded.                                                                                                                                                                                                         |
+| Name                    | Description                                                                                                                                                                                         |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| API_KEY                 | Production or test API Key.                                                                                                                                                                         |
+| defaultCrypto           | Select a specific cryptocurrency by default. Should be specified the cryptocurrency code.                                                                                                           |
+| defaultFiat             | Fiat currency to select by default.                                                                                                                                                                 |
+| defaultFiatSoft         | Fiat currency to select by default only when the country currency is unavailable.                                                                                                                   |
+| defaultPaymentMethod    | Payment method to select by default. [See posible values here.](#payment-method-ids)                                                                                                                |
+| defaultAmount           | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied. |
+| defaultAddrs \| wallets | Used to autofill the crypto address of the user.                                                                                                                                                    |
+| onlyCryptos             | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.                                                                                                     |
+| excludeCryptos          | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos.                                                                                |
+| onlyFiat                | Only the fiat currencies added here will be available to pick.                                                                                                                                      |
+| excludeFiat             | The fiat currencies added here will be excluded from the available ones.                                                                                                                            |
+| onlyPaymentMethods      | Only the payment methods added here will be available to pick. [See posible values here.](#payment-method-ids)                                                                                      |
+| excludePaymentMethods   | The payment methods added here will be excluded from the available ones. [See posible values here.](#payment-method-ids)                                                                            |
+| onlyGateways            | Only the gateways added here will be availables. By default all are availables.                                                                                                                     |
+| isAddressEditable       | Allow the user to edit the crypto address that is passed through the parameter defaultAddrs or wallets.                                                                                             |
+| color                   | Color to change the highlight of the widget. Should be an hex color.                                                                                                                                |
+| fontFamily              | Font to use in the widget.                                                                                                                                                                          |
+| gFontPath               | Allows you to load a remote Google Font. Eg. `css2?family=Roboto:wght@400;500&display=swap` widget.                                                                                                 |
+| redirectURL             | URL to redirect the user once a transaction is finished. Should be encoded.                                                                                                                         |
 
 #### Payment method IDs
 
 IDs of all posible payment methods:
-
 
 `creditCard`, `bankTransfer`, `applePay`, `googlePay`, `paynow`, `fps`, `alipay-hk`, `prompt-pay`, `instapay`, `upi`, `gojek-id`, `viettel-pay`, `duit-now`
