@@ -327,7 +327,7 @@ In order to verify the webhook signature, compute a HMAC with the SHA-256 hash f
 - Available in production.
 - Partner context available.
 - Moonpay's widget flow available through the API.
-- Onramper's custom flow available through an adapter. In order to use the custom Onramper flow with Moonpay you should use the npm package `@onramper/moonpay-adapter`, it works like a fetch mock so when Moonpay is selected, you will just have to forward the request to the Moonpay adapter. This is because of Moonpay policies, the code should be executed client side.
+- Onramper's custom flow available through an adapter. In order to use the custom Onramper flow with Moonpay you should use the [npm package `@onramper/moonpay-adapter`](https://www.npmjs.com/package/@onramper/moonpay-adapter), it works like a fetch mock so when Moonpay is selected, you will just have to forward the request to the Moonpay adapter. This is because of Moonpay policies, the code should be executed client side.
 
 #### Xanpool
 
