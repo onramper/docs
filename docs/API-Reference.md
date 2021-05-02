@@ -196,7 +196,7 @@ We make a request to `nextStep.url` with the following body:
   "cryptocurrencyAddress": "0xce46a79f871cf0b05a5ef20ff041c92a007d507e",
   // only if it's the first step and you want to attach a custom context
   "partnerContext": {
-    myTxId: "00d471bd-9b97-4503-b75e-c0199860c198"
+    myTxId: "TwQC716Q8D",
     myUserId: 65165468,
     lastTab: "wallet-funds",
   }
@@ -254,7 +254,7 @@ Webhooks perform signed POST requests about specific events to a URL of your cho
 
 In order to receive webhooks, you must provide Onramper with a URL that the webhooks will be sent to. A shared secret will be shared privately with you in order to verify the webhook payload's signature. Contact us for this secret.
 
-**Body**
+**Payload**
 
 | Key                        | Description                                                                         |
 |----------------------------|-------------------------------------------------------------------------------------|
@@ -274,22 +274,31 @@ In order to receive webhooks, you must provide Onramper with a URL that the webh
 Example:
 ```json
 {
-   "type":"form",
-   "url":"https://onramper.tech/transaction/Moonpay/verifyEmail/WyJIQVdMOGJwM1I4RmFMeGpDTUNTOUtnLS0iLCJkYXJlbjQ0dl93NDgxbEB4ZWRtaS5jb20iXQ==",
-   "data":[
-      {
-         "type":"string",
-         "name":"verifyEmailCode",
-         "humanName":"Email verification code"
-      }
-   ]
+  "txId": "f5377a92-0fb5-4bc2-a759-b554ad4fb769",
+  "inAmount": 204.45,
+  "inCurrency": "USD",
+  "outAmount": 0.0036,
+  "outCurrency": "BTC",
+  "timestamp": 1619946830511,
+  "gatewayIdentifier": "Moonpay",
+  "medium": "undefined",
+  "partnerContext": {
+    "myTxId": "TwQC716Q8D",
+    "myUserId": 65165468,
+    "lastTab": "wallet-funds",
+  },
 }
 ```
 
+<<<<<<< HEAD
 **Partner context**
 If you would like to receive a custom data / tx identifier / partner context that is set by you in the webhook payload, you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response.  Currentl, this functionality is only available for `Moonpay` and `Wyre`.
+=======
+#### Partner context
+If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response.  Currently is functionality is only available for `Moonpay` and `Wyre`.
+>>>>>>> 17e2073 (Fix spacings)
 
-**Securing Webhooks**
+#### Securing Webhooks
 To ensure the integrity of the data contained in the webhook, Onramper signs all webhooks sent with a shared secret that is known only by you and Onramper.
 
 Signing the webhooks is done using `HMAC-SHA256` with the shared secret as the key and the full request body as the message. The resulting signature is provided in the `X-Onramper-Webhook-Signature` HTTP header.
@@ -299,29 +308,29 @@ In order to verify the webhook signature, compute a HMAC with the SHA-256 hash f
 
 ## Available gateways
 
-**Wyre**
+#### Wyre
 - Available in production.
 - Partner context available.
 - Onramper's custom flow.
 
-**Moonpay**
+#### Moonpay
 - Available in production.
 - Partner context available.
 - Moonpay's widget flow available through the API.
 - Onramper's custom flow available through an adapter. In order to use the custom Onramper flow with Moonpay you should use the npm package `@onramper/moonpay-adapter`, it works like a fetch mock so when Moonpay is selected, you will just have to forward the request to the Moonpay adapter. This is because of Moonpay policies, the code should be executed client side.
 
-**Xanpool**
+#### Xanpool
 - Available in production.
 - Xanpool's widget flow.
 - Partner context soon will be supported.
 
-**Mercuryo**
+#### Mercuryo
 - Available in production.
 - Mercuryo's widget flow.
 - Partner context soon will be supported.
 
-**Coinify**
+#### Coinify
 - Available only for test enviroment. Soon in production.
 
-**Indacoin**
+#### Indacoin
 - Soon available
