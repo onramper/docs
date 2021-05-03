@@ -137,7 +137,6 @@ export default function WidgetContainer() {
         }}
         isAddressEditable={isAddressEditable}
         amountInCrypto={amountInCrypto}
-        partnerContext={partnerContext}
         redirectURL={redirectURL}
       />
     </div>
