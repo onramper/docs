@@ -257,7 +257,7 @@ Test card number
 
 **Indacoin**
 
-_validate for only `INTT` `(Indacoin Test Token)` transactions_
+_Valid for only `INTT` `(Indacoin Test Tokens)` transactions._
 
 Test card number
 
