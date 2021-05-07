@@ -255,6 +255,14 @@ Test card number
 2FA codes (sms/card)
 `000000`
 
+**Indacoin**
+
+_validate for only `INTT` `(Indacoin Test Token)` transactions_
+
+Test card number
+
+`4111 1111 1111 1111`  `03/2023`  `123`
+
 ## Webhooks
 
 Webhooks perform signed POST requests about specific events to a URL of your choice. If you respond with a 2xx code, our system will consider the webhook as successfully sent and received.
@@ -295,16 +303,9 @@ Example:
 }
 ```
 
-<<<<<<< HEAD
-**Partner context**
-If you would like to receive a custom data / tx identifier / partner context that is set by you in the webhook payload, you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currentl, this functionality is only available for `Moonpay` and `Wyre`.
-=======
-
 #### Partner context
 
 If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currently is functionality is only available for `Moonpay` and `Wyre`.
-
-> > > > > > > 17e2073 (Fix spacings)
 
 #### Securing Webhooks
 
@@ -347,4 +348,4 @@ In order to verify the webhook signature, compute a HMAC with the SHA-256 hash f
 
 #### Indacoin
 
-- Soon available
+- Avaliable only for test environment. Soon in production.
