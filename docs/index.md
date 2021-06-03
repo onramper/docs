@@ -11,8 +11,9 @@ Currently, the integrated gateways are:
 · <a href="https://sendwyre.com" target="_blank">Wyre</a>  
 · <a href="https://xanpool.com/" target="_blank">Xanpool</a>  
 · <a href="https://mercuryo.io/" target="_blank">Mercuryo</a>  
-· <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (Jan.)</a>  
-· <a href="https://www.coinify.com/" target="_blank">Coinify (soon)</a>  
+· <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (June)</a>  
+· <a href="https://www.coinify.com/" target="_blank">Coinify (June)</a>
+· <a href="https://www.indacoin.com/" target="_blank">Indacoin (June)</a>
 
 We'll continue to contract with and integrate additional gateways. We'll also be adding an offramp soon (allowing users to sell crypto for fiat).  
 
