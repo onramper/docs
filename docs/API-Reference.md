@@ -237,7 +237,7 @@ Success step response example (the response is a new step):
 ## Testing
 
 To execute the transactions in a testing enviroment make sure you use your test API Key in the `Authorization` header. For example `Basic pk_test_xxxxxxxxxxxxxxxxxxxxxxxx`.
-When testing a transaction to buy BTC, make sure to use a test-net wallet address.
+When testing a transaction to buy BTC, make sure to use a test-net wallet address. An example testnet address you could use is: 2N3oefVeg6stiTb5Kh3ozCSkaqmx91FDbsm
 
 **Moonpay**
 
