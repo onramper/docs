@@ -4,6 +4,12 @@
 
 With any request, you should include the header `Authorization` with value `Basic API_KEY`. For example `Basic pk_prod_xxxxxxxxxxxxxxxxxxxxxxxx`.
 
+Example cURL command with Basic Authorization header for the Gateways endpoint:
+```
+curl --location --request GET 'https://onramper.tech/gateways' \
+--header 'Authorization: Basic pk_prod_xxxxxxxxxxxxxxxxxxxxxxxx'
+```
+
 ## Gateways
 
 Endpoint: `GET https://onramper.tech/gateways`
