@@ -324,7 +324,7 @@ You can trigger a webhook call using a test API key and completing the full widg
 
 **Curl command**
 
-You can emulate a webhook call using the following curl command.
+You can emulate a webhook call using the following curl command. Secret used for the signature: `secret`
 
 ```
 curl -X POST -d "{\"type\":\"transaction_completed\",\"payload\":{\"txId\":\"WO_63FR9TVRG9\",\"gatewayIdentifier\":\"Wyre\",\"timestamp\":1624227875007,\"inCurrency\":\"EUR\",\"inAmount\":50,\"outCurrency\":\"ETH\",\"outAmount\":0.01581851265223089,\"purchaseAmount\":31.75,\"partnerContext\":{\"myTxId\":\"TwQC716Q8D\",\"myUserId\":65165468,\"lastTab\":\"wallet-funds\"}}}" -H "X-Onramper-Webhook-Signature: 0dc258b9cd4189e82dd6bd6fe20693e45a2748d185acd9b26187d84136eb554f" -H "Content-Type: application/json" https://webhook.site/27c6ed6e-1dda-4d3c-8d1c-48e9109b9878
