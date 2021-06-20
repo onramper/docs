@@ -261,7 +261,7 @@ _Valid for only `INTT` `(Indacoin Test Tokens)` transactions._
 
 Test card number
 
-`4111 1111 1111 1111`  `03/2023`  `123`
+`4111 1111 1111 1111` `03/2023` `123`
 
 ## Webhooks
 
@@ -272,36 +272,44 @@ In order to receive webhooks, you must provide Onramper with a URL that the webh
 **Payload**
 
 | Key                        | Description                                                                         |
-| -------------------------- | ----------------------------------------------------------------------------------- |
+| -------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| type `string`              | Type of the payload. Possible value: `transaction_completed`. identifier.           |
 | txId `string`              | Unique transaction identifier.                                                      |
 | inAmount `number`          | A positive integer representing how much the user is charged.                       |
 | inCurrency `string`        | The identifier of the fiat currency the user wants to use for the transaction.      |
 | outAmount `number`         | A positive integer representing the amount of cryptocurrency the user will receive. |
 | outCurrency `string`       | The identifier of the cryptocurrency the user wants to purchase.                    |
+| purchaseAmount `number     | undefined`                                                                          | A positive integer representing the value of the crypto purchased in `inCurrency` currency. |
 | timestamp `number`         | Time at which the object was created. Returned as Unix timestamp.                   |
 | gatewayIdentifier `string` | The identifier of the gateway used to execute the purchase.                         |
-| medium `string`            | Payment method the user used (currently disabled)                                   |
-| partnerContext `object`    | Context for this event. Free context for partners to receive in webhooks.           |
+| medium `string             | undefined`                                                                          | Payment method used by the user.                                                            |
+| partnerContext `object     | undefined`                                                                          | Custom context of this event. Free context for partners to receive in webhooks.             |
 
 Example:
 
 ```json
 {
-  "txId": "f5377a92-0fb5-4bc2-a759-b554ad4fb769",
-  "inAmount": 204.45,
-  "inCurrency": "USD",
-  "outAmount": 0.0036,
-  "outCurrency": "BTC",
-  "timestamp": 1619946830511,
-  "gatewayIdentifier": "Moonpay",
-  "medium": "undefined",
-  "partnerContext": {
-    "myTxId": "TwQC716Q8D",
-    "myUserId": 65165468,
-    "lastTab": "wallet-funds"
+  "type": "transaction_completed",
+  "payload": {
+    "txId": "WO_63FR9TVRG9",
+    "gatewayIdentifier": "Wyre",
+    "timestamp": 1624227875007,
+    "inCurrency": "EUR",
+    "inAmount": 50,
+    "outCurrency": "ETH",
+    "outAmount": 0.01581851265223089,
+    "purchaseAmount": 31.75,
+    "partnerContext": {
+      "myTxId": "TwQC716Q8D",
+      "myUserId": 65165468,
+      "lastTab": "wallet-funds"
+    }
   }
 }
 ```
+
+**Partner context**
+If you would like to receive a custom data / tx identifier / partner context that is set by you in the webhook payload, you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currentl, this functionality is only available for `Moonpay` and `Wyre`.
 
 #### Partner context
 
