@@ -308,13 +308,6 @@ Example:
 }
 ```
 
-**Partner context**
-If you would like to receive a custom data / tx identifier / partner context that is set by you in the webhook payload, you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currentl, this functionality is only available for `Moonpay` and `Wyre`.
-
-#### Partner context
-
-If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currently is functionality is only available for `Moonpay` and `Wyre`.
-
 #### Securing webhooks
 
 To ensure the integrity of the data contained in the webhook, Onramper signs all webhooks sent with a shared secret that is known only by you and Onramper.
@@ -326,14 +319,20 @@ In order to verify the webhook signature, compute a HMAC with the SHA-256 hash f
 #### Testing webhooks
 
 **Flow simulation**
+
 You can trigger a webhook call using a test API key and completing the full widget flow.
 
 **Curl command**
+
 You can emulate a webhook call using the following curl command.
 
 ```
 curl -X POST -d "{\"type\":\"transaction_completed\",\"payload\":{\"txId\":\"WO_63FR9TVRG9\",\"gatewayIdentifier\":\"Wyre\",\"timestamp\":1624227875007,\"inCurrency\":\"EUR\",\"inAmount\":50,\"outCurrency\":\"ETH\",\"outAmount\":0.01581851265223089,\"purchaseAmount\":31.75,\"partnerContext\":{\"myTxId\":\"TwQC716Q8D\",\"myUserId\":65165468,\"lastTab\":\"wallet-funds\"}}}" -H "X-Onramper-Webhook-Signature: 0dc258b9cd4189e82dd6bd6fe20693e45a2748d185acd9b26187d84136eb554f" -H "Content-Type: application/json" https://webhook.site/27c6ed6e-1dda-4d3c-8d1c-48e9109b9878
 ```
+
+#### Partner context
+
+If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currently is functionality is only available for `Moonpay` and `Wyre`.
 
 ## Available gateways
 
