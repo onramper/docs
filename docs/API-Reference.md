@@ -272,7 +272,7 @@ In order to receive webhooks, you must provide Onramper with a URL that the webh
 **Payload**
 
 | Key                        | Description                                                                         |
-| -------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| -------------------------- | ----------------------------------------------------------------------------------- |
 | type `string`              | Type of the payload. Possible value: `transaction_completed`. identifier.           |
 | txId `string`              | Unique transaction identifier.                                                      |
 | inAmount `number`          | A positive integer representing how much the user is charged.                       |
