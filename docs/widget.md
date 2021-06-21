@@ -195,7 +195,7 @@ Then, add three `script` tags to load the necessary dependencies (React, ReactDO
 ></script>
 
 <!-- Load Onramper's widget. -->
-<script src="https://unpkg.com/@onramper/widget/index.js" crossorigin></script>
+<script src="https://unpkg.com/@onramper/widget/dist/index.js" crossorigin></script>
 ```
 
 After the three scripts load, add the widget to the DOM invoking the `initialize` function
