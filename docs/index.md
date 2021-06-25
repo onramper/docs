@@ -27,7 +27,7 @@ The widget can be easily implemented on your app/wallet, so you can focus on get
   
 # The API
 **For API access, contact us directly at <a href="mailto:api@onramper.com" target="_blank">api@onramper.com</a>.**
-Onramper can soon be implemented by connecting to our API. As such, businesses will be able to integrate Onramper however they want. Connecting by API is more work, but allows you to build your own UX/UI.
+Onramper can be implemented by connecting to our API. As such, businesses will be able to integrate Onramper however they want. Connecting by API is more work, but allows you to build your own UX/UI.
 
 · [See the reference list of API endpoints](./API-Reference.md)  
 · API wrappers (under development)
