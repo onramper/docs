@@ -332,9 +332,10 @@ curl -X POST -d "{\"type\":\"transaction_completed\",\"payload\":{\"txId\":\"WO_
 
 #### Partner context
 
-If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currently is functionality is only available for `Moonpay` and `Wyre`.
+If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currently, this functionality is only available for `Moonpay` and `Wyre`.
 
 ## Available gateways
+All gateways are available through API. However, most gateways will require you to display their widget at some stage during the transaction. The exceptions to this are Moonpay & Wyre, where you can fully customize the flow. 
 
 #### Wyre
 
