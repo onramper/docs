@@ -363,9 +363,11 @@ All gateways are available through API. However, most gateways will require you 
 - Partner context soon will be supported.
 
 #### Coinify
-
+- Available in production. (we need to whitelisted your domain; notify us if you want to enable Coinify)
+- Mercuryo's widget flow.
 - Available only for test enviroment. Soon in production.
 
 #### Indacoin
-
+- Available in production.
+- Mercuryo's widget flow.
 - Avaliable only for test environment. Soon in production.
