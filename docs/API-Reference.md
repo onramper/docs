@@ -327,12 +327,13 @@ You can trigger a webhook call using a test API key and completing the full widg
 You can emulate a webhook call using the following curl command. Secret used for the signature: `secreto`
 
 ```
-curl -X POST -d "{\"type\":\"transaction_completed\",\"payload\":{\"txId\":\"WO_63FR9TVRG9\",\"gatewayIdentifier\":\"Wyre\",\"timestamp\":1624227875007,\"inCurrency\":\"EUR\",\"inAmount\":50,\"outCurrency\":\"ETH\",\"outAmount\":0.01581851265223089,\"purchaseAmount\":31.75,\"partnerContext\":{\"myTxId\":\"TwQC716Q8D\",\"myUserId\":65165468,\"lastTab\":\"wallet-funds\"}}}" -H "X-Onramper-Webhook-Signature: 0dc258b9cd4189e82dd6bd6fe20693e45a2748d185acd9b26187d84136eb554f" -H "Content-Type: application/json" https://webhook.site/27c6ed6e-1dda-4d3c-8d1c-48e9109b9878
+curl -X POST -d "{\"type\":\"transaction_completed\",\"payload\":{\"txId\":\"WO_63FR9TVRG9\",\"gatewayIdentifier\":\"Wyre\",\"timestamp\":1624227875007,\"inCurrency\":\"EUR\",\"inAmount\":50,\"outCurrency\":\"ETH\",\"outAmount\":0.01581851265223089,\"purchaseAmount\":31.75,\"partnerContext\":{\"myTxId\":\"TwQC716Q8D\",\"myUserId\":65165468,\"lastTab\":\"wallet-funds\"}}}" -H "X-Onramper-Webhook-Signature: 0dc258b9cd4189e82dd6bd6fe20693e45a2748d185acd9b26187d84136eb554f" -H "Content-Type: application/json" https://yourendpoint.com/onramper-webhooks
 ```
 
 #### Partner context
 
-If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currently, this functionality is only available for `Moonpay` and `Wyre`.
+⚠️ Please, note that not all our gateways support a partner context, for now, see [Available gateways]('#available-gateways') section for more info. Soon all gateways will support this feature.
+If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currently is functionality is only available for `Moonpay` and `Wyre`.
 
 ## Available gateways
 All gateways are available through API. However, most gateways will require you to display their widget at some stage during the transaction. The exceptions to this are Moonpay & Wyre, where you can fully customize the flow. 
