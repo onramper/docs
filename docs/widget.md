@@ -15,6 +15,11 @@ Add your API key as a parameter in the URL of the code snippet as follows: `http
 
 Note: data retrieved with a test key can be not accurate, for real time prices use a production key.
 
+
+# Partner Context & Webhooks
+You can add your own transaction identifier / data field to your users' transactions by using a partnerContext. This allows you to (for example) track which user buys/deposits what currency & what amount. This partner context can be added using the parameter 'partnerContext' when integrating the widget. You can subsequently use <a href="https://docs.onramper.com/API-Reference/#webhooks" target ='_blank' > the webhooks to listen to completed transactions.</a> 
+⚠️ Please, note that not all our gateways support a partner context, for now, see <a href="https://docs.onramper.com/API-Reference/#available-gateways" target ='_blank' >Available gateways section</a> for more info. Soon all gateways will support this feature.
+
 ## Referral link
 
 You can simply add a link to your app or website to redirect users to a page (hosted by us) where the users can buy crypto. The widget url is `https://widget.onramper.com`
