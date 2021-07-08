@@ -83,6 +83,8 @@ You can pass some arguments as query parameters to the URL to customize the widg
 | isAddressEditable | Boolean value                                                            | `?isAddressEditable=false`                                                                                                                                                                                                | true                 |
 | color             | Hexadecimal color                                                        | `?color=346eeb`                                                                                                                                                                                                           | 31a5ff               |
 | fontFamily        | font-family css string                                                   | `Arial, Helvetica, sans-serif`                                                                                                                                                                                            | 'Roboto', sans-serif |
+| partnerContext    | URI encoded stringified JSON                                             | `?partnerContext=${pContext}`                                                                                                                                                                                             | Not set              |
+
 
 ## React component
 
