@@ -350,35 +350,34 @@ All gateways are available through API. However, most gateways will require you 
 #### Wyre
 
 - Available in production.
-- 
-available.
+- Partner context available.
 - Onramper's custom flow.
 
 #### Moonpay
 
 - Available in production.
 - Partner context available.
-- Moonpay's widget flow available through the API.
+- Moonpay's widget flow also available through the API.
 - Onramper's custom flow available through an adapter. In order to use the custom Onramper flow with Moonpay you should use the [npm package `@onramper/moonpay-adapter`](https://www.npmjs.com/package/@onramper/moonpay-adapter), it works like a fetch mock so when Moonpay is selected, you will just have to forward the request to the Moonpay adapter. This is because of Moonpay policies, the code should be executed client side.
 
 #### Xanpool
 
 - Available in production.
 - Xanpool's widget flow.
-- Partner context soon will be supported.
+- Partner context will be supported soon.
 
 #### Mercuryo
 
 - Available in production.
 - Mercuryo's widget flow.
-- Partner context soon will be supported.
+- Partner context will be supported soon.
 
 #### Coinify
-- Available in production. (we need to whitelisted your domain; notify us if you want to enable Coinify)
-- Mercuryo's widget flow.
-- Available only for test enviroment. Soon in production.
+- Available in production. (we need to whitelist your domain; notify us if you want to enable Coinify)
+- Coinify's widget flow.
+- Partner context will be supported soon.
 
 #### Indacoin
 - Available in production.
-- Mercuryo's widget flow.
-- Avaliable only for test environment. Soon in production.
+- Indacoin's widget flow.
+- Partner context will be supported soon.
