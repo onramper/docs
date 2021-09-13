@@ -3,7 +3,7 @@
 
 Onramper allows you to let your users buy crypto directly on your website or app. Onramper is a fiat-to-crypto gateway aggregator, which implements all major gateways in a single solution. This allows businesses to get global coverage of supported countries, payment methods, cryptocurrencies and fiat currencies. At the same time, businesses are free to implement their [own fees](#fees) on every user transaction.
 
-Onramper consist of a [widget](#the-widget) and an [API](#the-api). The API is, as of yet, unavailable. 
+Onramper consist of a [widget](#the-widget) and an [API](#the-api).
 
 ## Integrated fiat gateways
 Currently, the integrated gateways are:  
