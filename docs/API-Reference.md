@@ -280,7 +280,7 @@ The partner context is returned for completed transactions using webhooks.
 
 Webhooks perform signed POST requests about specific events to a URL of your choice. If you respond with a 2xx code, our system will consider the webhook as successfully sent and received.
 
-In order to receive webhooks, you must provide Onramper with a URL that the webhooks will be sent to. A shared secret will be shared privately with you in order to verify the webhook payload's signature. Contact us for this secret.
+In order to receive webhooks, you must provide Onramper with a URL that the webhooks will be sent to. A shared secret will be shared privately with you in order to verify the webhook payload's signature. To receive the secret, contact us at webhooks@onramper.com
 
 **Payload**
 
