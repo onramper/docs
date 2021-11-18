@@ -316,9 +316,7 @@ You can pass the following arguments to customize the widget. In React/JS integr
 | gFontPath               | Allows you to load a remote Google Font. Eg. `css2?family=Roboto:wght@400;500&display=swap` widget.                                                                                                 |
 | redirectURL             | URL to redirect the user once a transaction is finished. Should be encoded.                                                                                                                         |
 | isAmountEditable        | Allow the user to edit the amount (in fiat) which will be purchased. Setting this to false in conjunction with the defaultAmount parameter will only allow a user to purchase the amount specified. |
-
-| recommendedCryptoCurrencies        | Comma-separated list of crypto codes. The list specifies a group of items that should be shown first in the list of cryptocurrencies to choose 
-                                              |
+| recommendedCryptoCurrencies        | Comma-separated list of crypto codes. The list specifies a group of items that should be shown first in the list of cryptocurrencies to choose |
 
 #### Payment method IDs
 
