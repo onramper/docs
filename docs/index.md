@@ -13,6 +13,7 @@ Currently, the integrated gateways are:
 * <a href="https://mercuryo.io/" target="_blank">Mercuryo</a>  
 * <a href="https://www.coinify.com/" target="_blank">Coinify</a>  
 * <a href="https://www.indacoin.com/" target="_blank">Indacoin</a>  
+* <a href="https://utorg.pro/" target="_blank">Utorg</a>  
 * <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (live Soon)</a>  
 * <a href="https://ramp.network/" target="_blank">Ramp Network (live Soon)</a>  
 * <a href="https://transak.com/" target="_blank">Transak (live Soon)</a>  
@@ -36,7 +37,7 @@ Onramper can be implemented by connecting to our API. As such, businesses will b
 · API wrappers (under development)  
   
 # Fees
-Users pay fees for the conversion to the chosen fiat gateway. Additionally, end-users pay 1% of the tx to Onramper. However, end-users still pay less in fees than without Onramper as we ensure the lowest fee gateway will always be available for their transactions, which usually saves users far more than 1%. Additionally, Onramper procures lower rates than normally charged by gateways. 
+Users pay fees for the conversion to the chosen fiat gateway. Additionally, end-users pay 1% of the tx to Onramper. However, end-users still pay less in fees than without Onramper as we ensure the lowest fee gateway will always be available for their transactions, which usually saves users far more than 1%. Additionally, Onramper procures lower rates than normally charged by gateways. In most cases, Onramper's fee is not added on top of the gateways' fee. 
 
 You can also add your own fees on top of every transaction. For this you'll need to use a special API key provided by us. Please fill in our <a href ="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform" taget="_blank">client onboarding form.</a>
 
