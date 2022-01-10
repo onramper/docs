@@ -268,9 +268,7 @@ Test card number
 ## Partner context / tx identifier
 You can add your own transaction identifier / data field to your users' transactions by using a partnerContext. This allows you to (for example) track which user buys/deposits what currency & what amount. 
 
-If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. Currently is functionality is only available for `Moonpay` and `Wyre`.
-
-⚠️ Please, note that not all our gateways support a partner context, for now, see [Available gateways]('#available-gateways') section for more info. Soon all gateways will support this feature. 
+If you would like to receive a custom data set by you in the webhook payload you should send it in the body of the `POST` request of the [first step]('#first-step') of the purchase process. The first step of any purchase process is the step defined in the `nextStep` attribute of the `/rate` response. 
 
 The partner context is returned for completed transactions using webhooks.
 
@@ -364,20 +362,25 @@ All gateways are available through API. However, most gateways will require you 
 
 - Available in production.
 - Xanpool's widget flow.
-- Partner context will be supported soon.
+- Partner context available.
 
 #### Mercuryo
 
 - Available in production.
 - Mercuryo's widget flow.
-- Partner context will be supported soon.
+- Partner context available.
 
 #### Coinify
 - Available in production. (we need to whitelist your domain; notify us if you want to enable Coinify)
 - Coinify's widget flow.
-- Partner context will be supported soon.
+- Partner context available.
 
 #### Indacoin
 - Available in production.
 - Indacoin's widget flow.
-- Partner context will be supported soon.
+- Partner context available.
+
+#### Utorg
+- Available in production.
+- Utorg's widget flow.
+- Partner context available.
