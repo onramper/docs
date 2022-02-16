@@ -2,10 +2,10 @@
 
 Here you will find instructions to add the Onramper widget in your website or application. With just a few lines of code, you can allow your users to purchase cryptocurrencies from your web or app.
 
-You can integrate the widget in four different ways:  
-· Redirect your users to the widget URL with a referral link. [See more.](#referral-link)  
-· Use an iframe or a webview to embed the widget in your application. [See more.](#iframe)  
-· Import a component in your React application. [See more.](#react-component)  
+You can integrate the widget in four different ways:
+· Redirect your users to the widget URL with a referral link. [See more.](#referral-link)
+· Use an iframe or a webview to embed the widget in your application. [See more.](#iframe)
+· Import a component in your React application. [See more.](#react-component)
 · Add it to your static webpage using a CDN import. [See more.](#javascript)
 
 # API Key
@@ -17,7 +17,7 @@ Note: data retrieved with a test key can be not accurate, for real time prices u
 
 
 # Partner Context & Webhooks
-You can add your own transaction identifier / data field to your users' transactions by using a partnerContext. This allows you to (for example) track which user buys/deposits what currency & what amount. This partner context can be added using the parameter 'partnerContext' when integrating the widget. You can subsequently use <a href="https://docs.onramper.com/API-Reference/#webhooks" target ='_blank' > the webhooks to listen to completed transactions.</a> 
+You can add your own transaction identifier / data field to your users' transactions by using a partnerContext. This allows you to (for example) track which user buys/deposits what currency & what amount. This partner context can be added using the parameter 'partnerContext' when integrating the widget. You can subsequently use <a href="https://docs.onramper.com/API-Reference/#webhooks" target ='_blank' > the webhooks to listen to completed transactions.</a>
 ⚠️ Please, note that not all our gateways support a partner context, for now, see <a href="https://docs.onramper.com/API-Reference/#available-gateways" target ='_blank' >Available gateways section</a> for more info. Soon all gateways will support this feature.
 
 ## Referral link
@@ -325,3 +325,13 @@ You can pass the following arguments to customize the widget. In React/JS integr
 IDs of all posible payment methods:
 
 `creditCard`, `bankTransfer`, `applePay`, `googlePay`, `paynow`, `fps`, `alipay-hk`, `prompt-pay`, `instapay`, `upi`, `gojek-id`, `viettel-pay`, `duit-now`
+
+#### Dark mode
+
+Dark mode for the widget isn't available natively yet. You can be creative with custom css and the `color` option mentioned above to achieve the desired result. Apply the snippet below to the widget iframe on your website to create a dark mode look.
+
+```
+#onramper-widget {
+    filter: invert(1) hue-rotate(180deg) opacity(.8) contrast(.95);
+}
+```
