@@ -50,15 +50,15 @@ Note: In order to enable the widget for transactions, don't forget to [add your 
 
 ```html
 <iframe
-  src="https://widget.onramper.com?color=346eeb&apiKey=pk_test_x5M_5fdXzn1fxK04seu0JgFjGsu7CH8lOvS9xZWzuSM0"
-  height="595px"
+  src="https://widget.onramper.com?color=266677&apiKey=pk_test_x5M_5fdXzn1fxK04seu0JgFjGsu7CH8lOvS9xZWzuSM0"
+  height="600px"
   width="440px"
   title="Onramper widget"
   frameborder="0"
   allow="accelerometer;
   autoplay; camera; gyroscope; payment"
-  style="box-shadow: 3px 3px 5px 0px
-  rgba(0,0,0,0.75);"
+  style="box-shadow: 1px 1px 1px 1px
+  rgba(0,0,0,0.2);"
 >
   <a href="https://widget.onramper.com" target="_blank">Buy crypto</a>
 </iframe>
