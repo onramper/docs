@@ -92,6 +92,7 @@ You can pass some arguments as query parameters to the URL to customize the widg
 | partnerContext    | URI encoded stringified JSON                                             | `?partnerContext=${pContext}`                                                                                                                                                                                             | Not set              |
 | country           | ISO 3166 alpha-2 code (eg: 'us', 'gb', 'es')                             | `?country=es`                                                                                                                                                                                                             | Dynamic by client IP |
 | language          | ISO 639-1 language code (eg: 'en', 'ja', 'ko')                           | `?language=en`                                                                                                                                                                                                            | en                   |
+| darkMode          | Boolean value                                                            | `?darkMode=true`                                                                                                                                                                                                          | false                |
 
 
 ## React component
@@ -148,6 +149,7 @@ export default function WidgetContainer() {
         isAddressEditable={isAddressEditable}
         amountInCrypto={amountInCrypto}
         redirectURL={redirectURL}
+        darkMode={darkMode}
       />
     </div>
   );
@@ -180,6 +182,7 @@ While importing the widget as a React component, you can customize it using the 
 | isAmountEditable  | boolean?                                                                                                                                                          | `false`                                                                                                                                                                                                             | true                 |
 | color             | string?                                                                                                                                                           | `"#000000"`                                                                                                                                                                                                         | "#31a5ff"            |
 | fontFamily        | string?                                                                                                                                                           | `Arial, Helvetica, sans-serif`                                                                                                                                                                                      | 'Roboto', sans-serif |
+| darkMode          | boolean?                                                                                                                                                          | `true`                                                                                                                                                                                                              | false                |
 
 ## Javascript
 
@@ -275,6 +278,7 @@ Onramper.initialize("#onramper-widget");
 | isAmountEditable  | boolean?                                                                                                                                                          | `Onramper.initialize("#id", {isAmountEditable:false"})`                                                                                                                                                                                                   | true          |
 | color             | string?                                                                                                                                                           | `Onramper.initialize("#id", {color:"#000000"})`                                                                                                                                                                                                           | "#31a5ff"     |
 | fontFamily        | string?                                                                                                                                                           | `Onramper.initialize("#id", {fontFamily:"Arial, Helvetica, sans-serif"})`                                                                                                                                                                                 | "#31a5ff"     |
+| darkMode          | boolean?                                                                                                                                                          | `Onramper.initialize("#id", {darkMode:true"})`                                                                                                                                                                                                            | false          |
 
 ## Native apps
 
@@ -319,19 +323,10 @@ You can pass the following arguments to customize the widget. In React/JS integr
 | redirectURL             | URL to redirect the user once a transaction is finished. Should be encoded.                                                                                                                         |
 | isAmountEditable        | Allow the user to edit the amount (in fiat) which will be purchased. Setting this to false in conjunction with the defaultAmount parameter will only allow a user to purchase the amount specified. |
 | recommendedCryptoCurrencies        | Comma-separated list of crypto codes. The list specifies a group of items that should be shown first in the list of cryptocurrencies to choose |
+| darkMode                | Apply dark mode to the widget |
 
 #### Payment method IDs
 
 IDs of all posible payment methods:
 
 `creditCard`, `bankTransfer`, `applePay`, `googlePay`, `paynow`, `fps`, `alipay-hk`, `prompt-pay`, `instapay`, `upi`, `gojek-id`, `viettel-pay`, `duit-now`
-
-#### Dark mode
-
-Dark mode for the widget isn't available natively yet. You can be creative with custom css and the `color` option mentioned above to achieve the desired result. Apply the snippet below to the widget iframe on your website to create a dark mode look.
-
-```
-#onramper-widget {
-    filter: invert(1) hue-rotate(180deg) opacity(.8) contrast(.95);
-}
-```
