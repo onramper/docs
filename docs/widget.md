@@ -66,7 +66,7 @@ Note: In order to enable the widget for transactions, don't forget to [add your 
 
 ###### Live example & customization
 
-<a href="https://codepen.io/thijsmaaslaw/pen/eYzbgXM" target='_blank' >Iframe customization example</a>
+<a href="https://codepen.io/thijsmaaslaw/pen/RwROyWq" target='_blank' >Iframe customization example</a>
 
 #### URL parameters
 
