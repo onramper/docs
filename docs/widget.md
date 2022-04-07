@@ -24,7 +24,7 @@ You can add your own transaction identifier / data field to your users' transact
 
 You can simply add a link to your app or website to redirect users to a page (hosted by us) where the users can buy crypto. The widget url is `https://widget.onramper.com`
 
-If you want to receive a referral fee for every transaction done by users coming from your website, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >fill in our onboarding form to receive your API key</a> and then add your API key to the link as follows: `https://widget.onramper.com?apiKEY=theAPIkeyyoureceived`.
+If you want to receive a referral fee for every transaction done by users coming from your website, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >fill in our onboarding form to receive your API key</a> and then add your API key to the link as follows: `https://widget.onramper.com?apiKey=theAPIkeyyoureceived`.
 
 ###### HTML code snippet
 
