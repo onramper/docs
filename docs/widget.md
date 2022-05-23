@@ -51,8 +51,8 @@ Note: In order to enable the widget for transactions, don't forget to [add your 
 ```html
 <iframe
   src="https://widget.onramper.com?color=266677&apiKey=pk_test_x5M_5fdXzn1fxK04seu0JgFjGsu7CH8lOvS9xZWzuSM0"
-  height="600px"
-  width="440px"
+  height="660px"
+  width="482px"
   title="Onramper widget"
   frameborder="0"
   allow="accelerometer;
@@ -123,8 +123,8 @@ export default function WidgetContainer() {
   return (
     <div
       style={{
-        width: "440px",
-        height: "595px",
+        width: "482px",
+        height: "660px",
       }}
     >
       <OnramperWidget
@@ -236,8 +236,8 @@ Onramper.initialize("#onramper-widget");
         height: 100%;
       }
       #onramper-widget {
-        width: 440px;
-        height: 595px;
+        width: 482px;
+        height: 660px;
         box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
         margin: 3rem auto;
       }
