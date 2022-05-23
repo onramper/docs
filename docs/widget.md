@@ -8,6 +8,19 @@ You can integrate the widget in four different ways:
 · Import a component in your React application. [See more.](#react-component)
 · Add it to your static webpage using a CDN import. [See more.](#javascript)
 
+
+<div style="padding-bottom: 28px;">
+  <iframe 
+    src="//codepen.io/anon/embed/KKQvxyO?height=790" 
+    height="790" 
+    scrolling="no" 
+    frameborder="0" 
+    name="CodePen" 
+    title="CodePen" 
+    style="width:100%;overflow:hidden"
+    >CodePen Embed Fallback</iframe>
+</div>
+
 # API Key
 
 To allow users to buy crypto, you need an API key. To get an API key, fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >our onboarding form.</a>
@@ -15,8 +28,8 @@ Add your API key as a parameter in the URL of the code snippet as follows: `http
 
 Note: data retrieved with a test key can be not accurate, for real time prices use a production key.
 
-
 # Partner Context & Webhooks
+
 You can add your own transaction identifier / data field to your users' transactions by using a partnerContext. This allows you to (for example) track which user buys/deposits what currency & what amount. This partner context can be added using the parameter 'partnerContext' when integrating the widget. You can subsequently use <a href="https://docs.onramper.com/API-Reference/#webhooks" target ='_blank' > the webhooks to listen to completed transactions.</a>
 ⚠️ Please, note that not all our gateways support a partner context, for now, see <a href="https://docs.onramper.com/API-Reference/#available-gateways" target ='_blank' >Available gateways section</a> for more info. Soon all gateways will support this feature.
 
@@ -93,7 +106,6 @@ You can pass some arguments as query parameters to the URL to customize the widg
 | country           | ISO 3166 alpha-2 code (eg: 'us', 'gb', 'es')                             | `?country=es`                                                                                                                                                                                                             | Dynamic by client IP |
 | language          | ISO 639-1 language code (eg: 'en', 'ja', 'ko')                           | `?language=en`                                                                                                                                                                                                            | en                   |
 | darkMode          | Boolean value                                                            | `?darkMode=true`                                                                                                                                                                                                          | false                |
-
 
 ## React component
 
@@ -209,7 +221,10 @@ Then, add three `script` tags to load the necessary dependencies (React, ReactDO
 ></script>
 
 <!-- Load Onramper's widget. -->
-<script src="https://unpkg.com/@onramper/widget/dist/index.js" crossorigin></script>
+<script
+  src="https://unpkg.com/@onramper/widget/dist/index.js"
+  crossorigin
+></script>
 ```
 
 After the three scripts load, add the widget to the DOM invoking the `initialize` function
@@ -278,7 +293,7 @@ Onramper.initialize("#onramper-widget");
 | isAmountEditable  | boolean?                                                                                                                                                          | `Onramper.initialize("#id", {isAmountEditable:false"})`                                                                                                                                                                                                   | true          |
 | color             | string?                                                                                                                                                           | `Onramper.initialize("#id", {color:"#000000"})`                                                                                                                                                                                                           | "#31a5ff"     |
 | fontFamily        | string?                                                                                                                                                           | `Onramper.initialize("#id", {fontFamily:"Arial, Helvetica, sans-serif"})`                                                                                                                                                                                 | "#31a5ff"     |
-| darkMode          | boolean?                                                                                                                                                          | `Onramper.initialize("#id", {darkMode:true"})`                                                                                                                                                                                                            | false          |
+| darkMode          | boolean?                                                                                                                                                          | `Onramper.initialize("#id", {darkMode:true"})`                                                                                                                                                                                                            | false         |
 
 ## Native apps
 
@@ -298,32 +313,32 @@ These features are:
 
 You can pass the following arguments to customize the widget. In React/JS integrations the attributes `onlyCryptos`, `excludeCryptos`, `onlyPaymentMethods`, `excludePaymentMethods`, `excludeFiat`, `onlyGateways` and `onlyFiat` should be contained in an object under the attribute `filters`.
 
-| Name                    | Description                                                                                                                                                                                         |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| API_KEY                 | Production or test API Key.                                                                                                                                                                         |
-| defaultCrypto           | Select a specific cryptocurrency by default. Should be specified the cryptocurrency code.                                                                                                           |
-| defaultFiat             | Fiat currency to select by default.                                                                                                                                                                 |
-| defaultFiatSoft         | Fiat currency to select by default only when the country currency is unavailable.                                                                                                                   |
-| defaultPaymentMethod    | Payment method to select by default. [See possible values here.](#payment-method-ids)                                                                                                               |
-| defaultAmount           | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied. |
-| minAmountEur           | Positive integer representing the minimum amount of fiat to be filled in the widget. Should be indicated in EUR, for other currencies, a rounded aproximated conversion will be automatically applied. |
-| defaultAddrs \| wallets | Used to autofill the crypto address of the user.                                                                                                                                                    |
-| onlyCryptos             | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.                                                                                                     |
-| filters                 | An object containing the attributes `onlyCryptos`, `excludeCryptos`, `onlyPaymentMethods`, `excludePaymentMethods`, `excludeFiat`, `onlyGateways` and `onlyFiat`. Only for React/JS integrations.   |
-| excludeCryptos          | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos.                                                                                |
-| onlyFiat                | Only the fiat currencies added here will be available to pick.                                                                                                                                      |
-| excludeFiat             | The fiat currencies added here will be excluded from the available ones.                                                                                                                            |
-| onlyPaymentMethods      | Only the payment methods added here will be available to pick. [See possible values here.](#payment-method-ids)                                                                                     |
-| excludePaymentMethods   | The payment methods added here will be excluded from the available ones. [See possible values here.](#payment-method-ids)                                                                           |
-| onlyGateways            | Only the gateways added here will be availables. By default all are availables.                                                                                                                     |
-| isAddressEditable       | Allow the user to edit the crypto address that is passed through the parameter defaultAddrs or wallets.                                                                                             |
-| color                   | Color to change the highlight of the widget. Should be an hex color.                                                                                                                                |
-| fontFamily              | Font to use in the widget.                                                                                                                                                                          |
-| gFontPath               | Allows you to load a remote Google Font. Eg. `css2?family=Roboto:wght@400;500&display=swap` widget.                                                                                                 |
-| redirectURL             | URL to redirect the user once a transaction is finished. Should be encoded.                                                                                                                         |
-| isAmountEditable        | Allow the user to edit the amount (in fiat) which will be purchased. Setting this to false in conjunction with the defaultAmount parameter will only allow a user to purchase the amount specified. |
-| recommendedCryptoCurrencies        | Comma-separated list of crypto codes. The list specifies a group of items that should be shown first in the list of cryptocurrencies to choose |
-| darkMode                | Apply dark mode to the widget |
+| Name                        | Description                                                                                                                                                                                            |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| API_KEY                     | Production or test API Key.                                                                                                                                                                            |
+| defaultCrypto               | Select a specific cryptocurrency by default. Should be specified the cryptocurrency code.                                                                                                              |
+| defaultFiat                 | Fiat currency to select by default.                                                                                                                                                                    |
+| defaultFiatSoft             | Fiat currency to select by default only when the country currency is unavailable.                                                                                                                      |
+| defaultPaymentMethod        | Payment method to select by default. [See possible values here.](#payment-method-ids)                                                                                                                  |
+| defaultAmount               | Positive integer representing the base amount of fiat to be filled in the widget. Should be indicated in USD, for other currencies, a rounded aproximated conversion will be automatically applied.    |
+| minAmountEur                | Positive integer representing the minimum amount of fiat to be filled in the widget. Should be indicated in EUR, for other currencies, a rounded aproximated conversion will be automatically applied. |
+| defaultAddrs \| wallets     | Used to autofill the crypto address of the user.                                                                                                                                                       |
+| onlyCryptos                 | A comma-separated list of crypto codes to include. Only this cryptos will be shown to the user.                                                                                                        |
+| filters                     | An object containing the attributes `onlyCryptos`, `excludeCryptos`, `onlyPaymentMethods`, `excludePaymentMethods`, `excludeFiat`, `onlyGateways` and `onlyFiat`. Only for React/JS integrations.      |
+| excludeCryptos              | A comma-separated list of crypto codes to exclude. This cryptos will be excluded from the list of available cryptos.                                                                                   |
+| onlyFiat                    | Only the fiat currencies added here will be available to pick.                                                                                                                                         |
+| excludeFiat                 | The fiat currencies added here will be excluded from the available ones.                                                                                                                               |
+| onlyPaymentMethods          | Only the payment methods added here will be available to pick. [See possible values here.](#payment-method-ids)                                                                                        |
+| excludePaymentMethods       | The payment methods added here will be excluded from the available ones. [See possible values here.](#payment-method-ids)                                                                              |
+| onlyGateways                | Only the gateways added here will be availables. By default all are availables.                                                                                                                        |
+| isAddressEditable           | Allow the user to edit the crypto address that is passed through the parameter defaultAddrs or wallets.                                                                                                |
+| color                       | Color to change the highlight of the widget. Should be an hex color.                                                                                                                                   |
+| fontFamily                  | Font to use in the widget.                                                                                                                                                                             |
+| gFontPath                   | Allows you to load a remote Google Font. Eg. `css2?family=Roboto:wght@400;500&display=swap` widget.                                                                                                    |
+| redirectURL                 | URL to redirect the user once a transaction is finished. Should be encoded.                                                                                                                            |
+| isAmountEditable            | Allow the user to edit the amount (in fiat) which will be purchased. Setting this to false in conjunction with the defaultAmount parameter will only allow a user to purchase the amount specified.    |
+| recommendedCryptoCurrencies | Comma-separated list of crypto codes. The list specifies a group of items that should be shown first in the list of cryptocurrencies to choose                                                         |
+| darkMode                    | Apply dark mode to the widget                                                                                                                                                                          |
 
 #### Payment method IDs
 
