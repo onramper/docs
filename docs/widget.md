@@ -352,4 +352,4 @@ You can pass the following arguments to customize the widget. In React/JS integr
 
 IDs of all posible payment methods:
 
-`creditCard`, `bankTransfer`, `applePay`, `googlePay`, `paynow`, `fps`, `alipay-hk`, `prompt-pay`, `instapay`, `upi`, `gojek-id`, `viettel-pay`, `duit-now`
+`creditCard`, `bankTransfer`, `applePay`, `googlePay`, `paynow`, `fps`, `alipay-hk`, `prompt-pay`, `instapay`, `upi`, `gojek-id`, `viettel-pay`, `duit-now`, `ideal`, `bancontact`, `giropay`, `sofort`, `sepaBankTransfer`
