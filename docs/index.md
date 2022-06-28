@@ -3,8 +3,6 @@
 
 Onramper allows you to let your users buy crypto directly on your website or app. Onramper is a fiat-to-crypto gateway aggregator, which implements all major gateways in a single solution. This allows businesses to get global coverage of supported countries, payment methods, cryptocurrencies and fiat currencies. At the same time, businesses are free to implement their [own fees](#fees) on every user transaction.
 
-Onramper consist of a [widget](#the-widget) and an [API](#the-api).
-
 ## Integrated fiat gateways
 Currently, the integrated gateways are:  
 * <a href="https://moonpay.io" target="_blank">Moonpay</a>  
@@ -12,7 +10,7 @@ Currently, the integrated gateways are:
 * <a href="https://xanpool.com/" target="_blank">Xanpool</a>  
 * <a href="https://mercuryo.io/" target="_blank">Mercuryo</a>  
 * <a href="https://www.coinify.com/" target="_blank">Coinify</a>  
-* <a href="https://www.indacoin.com/" target="_blank">Indacoin</a>  
+* <a href="https://www.indacoin.com/" target="_blank">Indacoin</a>
 * <a href="https://utorg.pro/" target="_blank">Utorg</a>  
 * <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (live Soon)</a>  
 * <a href="https://ramp.network/" target="_blank">Ramp Network (live Soon)</a>  
