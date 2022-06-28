@@ -1,12 +1,16 @@
 # See https://squidfunk.github.io/mkdocs-material/getting-started/#configuration
 site_name: Onramper Docs
-site_description: Documentation for onramper widget & API
+site_description: Documentation for the Onramper Widget
 
 theme:
   name: material
   language: en
   logo: images/logo2.png
   favicon: images/favicon.ico
+
+nav:
+  - Introduction: 'index.md'
+  - Widget: 'widget.md'
 
 markdown_extensions:
   - pymdownx.highlight
