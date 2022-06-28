@@ -28,7 +28,7 @@ You can integrate the widget in four different ways:
 To allow users to buy crypto, you need an API key. To get an API key, fill in <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform?usp=sf_link" target='_blank' >our onboarding form.</a>
 Add your API key as a parameter in the URL of the code snippet as follows: `https://widget.onramper.com?apiKey=theAPIkeyyoureceived`.
 
-Note: data retrieved with a test key can be not accurate, for real time prices use a production key.
+Note: Due to the nature of the data retrieved with a test key it has no guarantee of accuracy, for accurate real-time prices please use a production key.
 
 # Partner Context & Webhooks
 
