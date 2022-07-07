@@ -12,9 +12,9 @@ Currently, the integrated gateways are:
 * <a href="https://www.coinify.com/" target="_blank">Coinify</a>  
 * <a href="https://www.indacoin.com/" target="_blank">Indacoin</a>
 * <a href="https://utorg.pro/" target="_blank">Utorg</a>  
+* <a href="https://transak.com/" target="_blank">Transak</a>  
 * <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (live Soon)</a>  
 * <a href="https://ramp.network/" target="_blank">Ramp Network (live Soon)</a>  
-* <a href="https://transak.com/" target="_blank">Transak (live Soon)</a>  
 
 We'll continue to contract with and integrate additional gateways. We'll also be adding an offramp soon (allowing users to sell crypto for fiat).  
 
