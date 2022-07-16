@@ -140,20 +140,20 @@ Url variables `{fromCurrency}` and `{toCurrency}` should be filled with currency
 
 ## Steps
 
-The purchase flow is split in different steps, and depends on the gateway used for the transaction. Users should complete all steps to make a successful purchase.
+The purchase flow is split in different steps, and depends on the onramp used for the transaction. Users should complete all steps to make a successful purchase.
 
 ##### First step
 
-You will find the first step to execute in the attribute `nextStep` of the available gateway selected from the `/rate` response and the following steps as the response of the executed step.
+You will find the first step to execute in the attribute `nextStep` of the available onramp selected from the `/rate` response and the following steps as the response of the executed step.
 
 If you want to attach a custom object to the transaction started by users, then you should append it to the body of the `POST` request of the first step (usually a `form` a `wait` step). You should add your custom object under the key `partnerContext` in the request body. In case the first step is a `form` step, the `partnerContext` key will be next to the other requested fields.
 
 ##### Purchase flow
 
 1. First we call to `/gateways` to get a list of the cryptos, currencies and payment methods availables.
-2. Once we have selected the `fromCurrency`, the `toCurrency`, the `paymentMethod` and the `amount` we want to buy, we make a call to `/rates` to know which gateways are availables for that combination.
-3. If the amount is enough to give us at least one gateway available, we can start the process of buying crypto. If not, we should make another call fixing one of the errors described in the attribute `error`.
-4. Now that we have selected the gateway we want to use, we should check the attribute `nextStep` to know which is the first step to start with the purchase flow.
+2. Once we have selected the `fromCurrency`, the `toCurrency`, the `paymentMethod` and the `amount` we want to buy, we make a call to `/rates` to know which onramps are availables for that combination.
+3. If the amount is enough to give us at least one onramp available, we can start the process of buying crypto. If not, we should make another call fixing one of the errors described in the attribute `error`.
+4. Now that we have selected the onramp we want to use, we should check the attribute `nextStep` to know which is the first step to start with the purchase flow.
 5. Here you have a ([list of posible steps](#steps)) and instructions to how to execute them.
 6. Once we complete a step, we will get a new step on the response. We will keep executing steps until the flow is finished.
 
@@ -167,7 +167,7 @@ If you want to attach a custom object to the transaction started by users, then 
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | wait                   | Waiting step. The server is processing some data and there's no action to be done now, user should wait. To execute make a `POST` request to the `url` attribute. The response will be another waiting step until the server has finished the current data processing, the app should query the following waiting steps until the server responds with another type of step. |
 | form                   | Form step. Describes a set of fields that should be filled by the user. To execute, make a `POST` request to the `url` attribute with the fields as a body request.                                                                                                                                                                                                          |
-| iframe                 | External widget/iframe step, required in the flow of some gateways (for payment/KYC). To execute this step, display to the user an iframe of the `url` attribute, listen to 'messages' of the iframe window to get the next step.                                                                                                                                            |
+| iframe                 | External widget/iframe step, required in the flow of some onramps (for payment/KYC). To execute this step, display to the user an iframe of the `url` attribute, listen to 'messages' of the iframe window to get the next step.                                                                                                                                            |
 | redirect               | The user should be redirected to the url specified in the `url` attribute. Listen to 'messages' of the redirected window to get the next step.                                                                                                                                                                                                                               |
 | pickOne                | User can choose to complete one of the steps listed in the `options` attribute.                                                                                                                                                                                                                                                                                              |
 | file                   | User should upload a file. To execute make a `PUT` request to the `url` attribute.                                                                                                                                                                                                                                                                                           |
@@ -298,7 +298,7 @@ In order to receive webhooks, you must provide Onramper with a URL that the webh
 | outCurrency `string`       | The identifier of the cryptocurrency the user wants to purchase.                    |
 | purchaseAmount `number     | undefined`                                                                          | A positive integer representing the value of the crypto purchased in `inCurrency` currency. |
 | timestamp `number`         | Time at which the object was created. Returned as Unix timestamp.                   |
-| gatewayIdentifier `string` | The identifier of the gateway used to execute the purchase.                         |
+| gatewayIdentifier `string` | The identifier of the onramp used to execute the purchase.                          |
 | medium `string             | undefined`                                                                          | Payment method used by the user.                                                            |
 | partnerContext `object     | undefined`                                                                          | Custom context of this event. Free context for partners to receive in webhooks.             |
 
@@ -348,8 +348,10 @@ curl -X POST -d "{\"type\":\"transaction_completed\",\"payload\":{\"txId\":\"WO_
 ```
 
 
-## Available gateways
-All gateways are available through API. However, most gateways will require you to display their widget at some stage during the transaction. The exceptions to this are Moonpay & Wyre, where you can fully customize the flow. 
+## Available onramps
+All onramps are available through API. However, most onramps will require you to display their widget at some stage during the transaction. The exceptions to this are Moonpay (in select cases) & Wyre, where you can fully customize the flow.
+
+To enable fully a fully integrated experience with all onramps please contact <a href="mailto:support@onramper.com>support@onramper.com</a> and request your domain to be whitelisted.
 
 #### Wyre
 
