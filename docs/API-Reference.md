@@ -4,23 +4,23 @@
 
 With any request, you should include the header `Authorization` with value `Basic API_KEY`. For example `Basic pk_prod_xxxxxxxxxxxxxxxxxxxxxxxx`.
 
-Example cURL command with Basic Authorization header for the Gateways endpoint:
+Example cURL command with Basic Authorization header for the Onramps endpoint:
 ```
 curl --location --request GET 'https://onramper.tech/gateways' \
 --header 'Authorization: Basic pk_prod_xxxxxxxxxxxxxxxxxxxxxxxx'
 ```
 
-## Gateways
+## Onramps
 
 Endpoint: `GET https://onramper.tech/gateways`
 
-Get a list of available gateways. The info provided about these gateways is: the cryptocurrencies, currencies an payment methods accepted. It also provides localization data on the user, which can be used to customize the widget. [See response type definitions here](https://github.com/onramper/widget/tree/master/package/src/ApiContext/api/types).
+Get a list of available onramps. The info provided about these gateways is: the cryptocurrencies, currencies an payment methods accepted. It also provides localization data on the user, which can be used to customize the widget. [See response type definitions here](https://github.com/onramper/widget/tree/master/package/src/ApiContext/api/types).
 
 ##### Options
 
 | Option       | Description                                                                                                                                                                                                                                                                                                                                   |
 | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| country      | Defines which gateways are available. By default, the country is automatically detected by the API using client's IP but it can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get all the available options for all countries just set the country to 'all'. `E.g. https://onramper.tech/gateways?country=es` |
+| country      | Defines which onramps are available. By default, the country is automatically detected by the API using client's IP but it can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get all the available options for all countries just set the country to 'all'. `E.g. https://onramper.tech/gateways?country=es` |
 | includeIcons | If `true`, includes icons of the cryptos, currencies and payment methods in the response. `E.g. https://onramper.tech/gateways?includeIcons=true`                                                                                                                                                                                             |
 
 ##### Example response
@@ -63,7 +63,7 @@ Get a list of available gateways. The info provided about these gateways is: the
 
 Endpoint: `GET https://onramper.tech/rate/{fromCurrency}/{toCurrency}/{paymentMethod}/{amount}`
 
-Get a list of accessable gateways. Those gateways can be available or unavailable. The available gateways will have the attribute `available` set to `true`, and an [attribute `nextStep`](#steps) describing the first action to be done to start the [purchase flow](#purchase-flow). The unavailable gateways will have the attribute `available` set to `false`, and an attribute `error` describing why the gateway is unavailable (e.g. Maximum amount exceeded).
+Get a list of accessable onramps. Those onramps can be available or unavailable. The available onramps will have the attribute `available` set to `true`, and an [attribute `nextStep`](#steps) describing the first action to be done to start the [purchase flow](#purchase-flow). The unavailable onramps will have the attribute `available` set to `false`, and an attribute `error` describing why the onramp is unavailable (e.g. Maximum amount exceeded).
 
 Url variables `{fromCurrency}` and `{toCurrency}` should be filled with currency codes and `{paymentMethod}` should be filled with one of the payment methods id's. Codes and id's are availables on the attributes `cryptoCurrencies`, `fiatCurrencies` and `paymentMethods` from [`/gateways` response](#gateways). Url variable {amount} is a positive integer.
 
@@ -78,7 +78,7 @@ Url variables `{fromCurrency}` and `{toCurrency}` should be filled with currency
 
 | Option         | Description                                                                                                                                                                                                                                                                                                                            |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| country        | Defines which gateways are available. By default, country is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get all the available options for all countries just set the country to 'all'. `E.g. https://onramper.tech/gateways?country=es` |
+| country        | Defines which onramps are available. By default, country is automatically detected by the API using client's IP but can be overwriten by providing it's ISO 3166 alpha-2 code (eg: 'us', 'gb'...). To get all the available options for all countries just set the country to 'all'. `E.g. https://onramper.tech/gateways?country=es` |
 | includeIcons   | If `true`, includes icons of the cryptos, currencies and payment methods in the response. `E.g. https://onramper.tech/gateways?includeIcons=true`                                                                                                                                                                                      |
 | amountInCrypto | If `true`, the amount specified in `{amount}` represents the amount of crypto user wants to buy. `E.g. https://onramper.tech/rate/EUR/BTC/creditCard/100?amountInCrypto=true`                                                                                                                                                          |
 
