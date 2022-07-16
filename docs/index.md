@@ -10,7 +10,7 @@ Currently, the integrated onramps are:
 * <a href="https://xanpool.com/" target="_blank">Xanpool</a>  
 * <a href="https://mercuryo.io/" target="_blank">Mercuryo</a>  
 * <a href="https://www.coinify.com/" target="_blank">Coinify</a>  
-* <a href="https://www.indacoin.com/" target="_blank">Indacoin</a>
+* <a href="https://www.indacoin.com/" target="_blank">Indacoin</a>  
 * <a href="https://utorg.pro/" target="_blank">Utorg</a>  
 * <a href="https://transak.com/" target="_blank">Transak</a>  
 * <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (live Soon)</a>  
