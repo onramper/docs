@@ -11,6 +11,7 @@ theme:
 nav:
   - Introduction: 'index.md'
   - Widget: 'widget.md'
+  - 'API Reference': 'API-Reference.md'
 
 markdown_extensions:
   - pymdownx.highlight
