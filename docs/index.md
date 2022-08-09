@@ -24,7 +24,7 @@ Our ongoing goal is to expand our onramp and offramp offering and global coverag
 The widget can be easily implemented on your app/wallet, so you can focus on getting users, instead of having to integrate multiple fiat onramps yourself. The widget can be integrated in as little as 5 minutes. It is possible to customize the widget to only show certain currencies, payment methods, etc. You can also automatically insert the user's public key, and change the widget's colours to match your site/app.
 
 · <a href="https://widget.onramper.com" target="_blank">Try the widget for yourself.</a>  
-· <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform" target="_blank">Sign up for an production-ready API key.</a>  
+· <a href="https://share-eu1.hsforms.com/1c4qtZQxJSuONbQquXI9tdgfe2vw" target="_blank">Sign up for an production-ready API key.</a>  
 · [Customize and integrate the widget.](./widget.md)  
 · [Technical overview of how the widget works](https://github.com/onramper/widget/blob/dev/README.md)  
   
@@ -32,7 +32,7 @@ The widget can be easily implemented on your app/wallet, so you can focus on get
 # The API
 Onramper can be implemented by connecting to our API. As such, businesses will be able to integrate Onramper however they want. Connecting by API is more work, but allows you to fully build your own UX/UI. Note that our widget is highly customizable by itself, and integration of the widget ensures you instantly get every update we do on your integration.
 
-· <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform" target="_blank">Sign up for an production-ready API key.</a>  
+· <a href="https://share-eu1.hsforms.com/1c4qtZQxJSuONbQquXI9tdgfe2vw" target="_blank">Sign up for an production-ready API key.</a>  
 · [See the reference list of API endpoints](./API-Reference.md)  
 · API wrappers (under development)  
 --->
@@ -40,5 +40,5 @@ Onramper can be implemented by connecting to our API. As such, businesses will b
 # Fees
 Users pay fees for the conversion to the chosen fiat onramp. Additionally, end-users pay 1% of the tx to Onramper. However, end-users still pay less in fees than without Onramper as we ensure the lowest fee onramp will always be available for their transactions, which usually saves users far more than 1%. Additionally, Onramper procures lower rates than normally charged by onramps. In most cases, Onramper's fee is not added on top of the onramps' fee. 
 
-You can also add your own fees on top of every transaction. For this you'll need to use a special API key provided by us. Please fill in our <a href ="https://docs.google.com/forms/d/e/1FAIpQLSdnmTskkGA5QJGjC1eVRcqXZouuGe_ojltlBFs5nFClrSl_gA/viewform" taget="_blank">client onboarding form.</a>
+You can also add your own fees on top of every transaction. For this you'll need to use a special API key provided by us. Please fill in our <a href ="https://share-eu1.hsforms.com/1c4qtZQxJSuONbQquXI9tdgfe2vw" taget="_blank">client onboarding form.</a>
 
