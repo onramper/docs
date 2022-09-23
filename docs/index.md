@@ -14,8 +14,9 @@ Currently, the integrated onramps are:
 * <a href="https://utorg.pro/" target="_blank">Utorg</a>  
 * <a href="https://transak.com/" target="_blank">Transak</a>  
 * <a href="https://itez.com/" target="_blank">Itez</a>  
+* <a href="https://www.sardine.ai/" target="_blank">Sardine (live Soon)</a>  
 * <a href="https://btcdirect.eu/en-gb/" target="_blank">BTCDirect (live Soon)</a>  
-* <a href="https://ramp.network/" target="_blank">Ramp Network (live Soon)</a>  
+
 
 Our ongoing goal is to expand our onramp and offramp offering and global coverage. If you have any specific requirements or recommendations feel free to let us know via <a href="mailto:support@onramper.com">support@onramper.com</a>
 
