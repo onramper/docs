@@ -25,7 +25,7 @@ Our ongoing goal is to expand our onramp and offramp offering and global coverag
 The widget can be easily implemented on your app/wallet, so you can focus on getting users, instead of having to integrate multiple fiat onramps yourself. The widget can be integrated in as little as 5 minutes. It is possible to customize the widget to only show certain currencies, payment methods, etc. You can also automatically insert the user's public key, and change the widget's colours to match your site/app.
 
 · <a href="https://widget.onramper.com" target="_blank">Try the widget for yourself.</a>  
-· <a href="https://share-eu1.hsforms.com/1c4qtZQxJSuONbQquXI9tdgfe2vw" target="_blank">Sign up for an production-ready API key.</a>  
+· <a href="https://share-eu1.hsforms.com/1j4Hp016XT9-ilWyw6gw3wAfe2vw?__hstc=18962535.7ba5461a9167487941c7bf9585718709.1669355006934.1669355006934.1669355006934.1&__hssc=18962535.1.1669355006934&__hsfp=749069925" target="_blank">Sign up for an production-ready API key.</a>  
 · [Customize and integrate the widget.](./widget.md)  
 · [Technical overview of how the widget works](https://github.com/onramper/widget/blob/dev/README.md)  
   
@@ -33,13 +33,13 @@ The widget can be easily implemented on your app/wallet, so you can focus on get
 # The API
 Onramper can be implemented by connecting to our API. As such, businesses will be able to integrate Onramper however they want. Connecting by API is more work, but allows you to fully build your own UX/UI. Note that our widget is highly customizable by itself, and integration of the widget ensures you instantly get every update we do on your integration.
 
-· <a href="https://share-eu1.hsforms.com/1c4qtZQxJSuONbQquXI9tdgfe2vw" target="_blank">Sign up for an production-ready API key.</a>  
+· <a href="https://share-eu1.hsforms.com/1j4Hp016XT9-ilWyw6gw3wAfe2vw?__hstc=18962535.7ba5461a9167487941c7bf9585718709.1669355006934.1669355006934.1669355006934.1&__hssc=18962535.1.1669355006934&__hsfp=749069925" target="_blank">Sign up for an production-ready API key.</a>  
 · [See the reference list of API endpoints](./API-Reference.md)  
 · API wrappers (under development)  
 --->
   
 # Fees
-Users pay fees for the conversion to the chosen fiat onramp. Additionally, end-users pay 1% of the tx to Onramper. However, end-users still pay less in fees than without Onramper as we ensure the lowest fee onramp will always be available for their transactions, which usually saves users far more than 1%. Additionally, Onramper procures lower rates than normally charged by onramps. In most cases, Onramper's fee is not added on top of the onramps' fee. 
+We don’t charge integration costs and don’t have a monthly subscription. Instead, Onramper is paid by the various fiat onramps. We do not add fees on top for users. In addition, Onramper gets fee discounts with its partner on-ramps due to the high amount of transaction volumes it does. 
 
-You can also add your own fees on top of every transaction. For this you'll need to use a special API key provided by us. Please fill in our <a href ="https://share-eu1.hsforms.com/1c4qtZQxJSuONbQquXI9tdgfe2vw" taget="_blank">client onboarding form.</a>
+Finally, by being able to pick the lowest-fee fiat gateway usually gets over 1.5% additional crypto. As such, Onramper is a lot cheaper for end-users in aggregate! You can also add your own fees on top of every transaction. For this you'll need to use a special API key provided by us. Please fill in our <a href ="https://share-eu1.hsforms.com/1j4Hp016XT9-ilWyw6gw3wAfe2vw?__hstc=18962535.7ba5461a9167487941c7bf9585718709.1669355006934.1669355006934.1669355006934.1&__hssc=18962535.1.1669355006934&__hsfp=749069925" target="_blank">client onboarding form.</a>
 
